@@ -20,7 +20,4 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::get('users', function()
-{
-    return View::make('users');
-});
+Route::get('quiz/{id}', 'QuizController@show');

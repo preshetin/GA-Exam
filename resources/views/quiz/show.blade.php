@@ -11,11 +11,13 @@
                     <p class="lead">{{ $question->description }}<p>
                 </div>
 
-                <ul class="list-group">
+                <div class="list-group">
                     @foreach($answers as $answer)
-                        <li class="list-group-item">{{ $answer->description }}</li>
+                        <a href="#" class="list-group-item"><span class="glyphicon glyphicon-ok-sign" style="color:green;" aria-hidden="true"></span> {{ $answer->description }}</a>
                     @endforeach
-                </ul>
+
+                </div>
+
             </div>
             <button class="btn btn-primary form-control" type="submit">Answer</button>
         </div>

@@ -12,7 +12,6 @@
 */
 
 Route::get('/', 'WelcomeController@index');
-
 Route::get('home', 'HomeController@index');
 
 Route::controllers([
@@ -21,3 +20,4 @@ Route::controllers([
 ]);
 
 Route::get('quiz/{id}', 'QuizController@show');
+Route::post('quiz/{id}', 'QuizController@reply');

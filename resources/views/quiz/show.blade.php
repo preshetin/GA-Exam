@@ -23,4 +23,21 @@
         </div>
     </div>
 </div>
+
+    {!! Form::open(['class'=>'ajax']) !!}
+    <div class="form-group">
+        @foreach($answers as $answer)
+            <div class="radio">
+                <label>
+                    {!! Form::radio('chosenAnswerId', $answer->id, null, ['id'=>$answer->id]) !!}
+                    {{ $answer->description }}
+                </label>
+            </div>
+        @endforeach
+
+        {!! Form::submit('Reply', ['class'=>'btn btn-primary']) !!}
+    </div>
+    {!! Form::close() !!}
+    <div class="reply_result"></div>
+
 @stop

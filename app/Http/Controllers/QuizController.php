@@ -2,10 +2,11 @@
 
 
 use App\Question;
+use App\Answer;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use Illuminate\Http\Request;
+use Request;
 
 class QuizController extends Controller {
 
@@ -19,5 +20,22 @@ class QuizController extends Controller {
             'question' => $question,
             'answers'  => $answers
         ]);
+    }
+
+    public function reply($questionId) {
+
+        $chosenAnswerId = Request::get('chosenAnswerId');
+
+        $replyResult = Answer::findOrFail($chosenAnswerId)->is_correct;
+
+        // save/update user answer to this question to 'replies' table
+
+        $answers = Question::find($questionId)->answers()->get();
+
+        return response()->json([
+            'replyResult'=> $replyResult,
+            'answers'    => $answers
+        ]);
+
     }
 }

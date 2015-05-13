@@ -39,6 +39,7 @@
 
             form.find('input[type=radio]').hide();
             form.find('input[type=submit]').hide();
+            form.find('.next-question-button').show();
         }
     });
 

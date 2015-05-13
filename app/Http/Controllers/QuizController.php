@@ -18,7 +18,8 @@ class QuizController extends Controller {
 
         return view('quiz.show')->with([
             'question' => $question,
-            'answers'  => $answers
+            'answers'  => $answers,
+            'nextQuestionLink' => '/quiz/' . ++$id
         ]);
     }
 

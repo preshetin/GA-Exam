@@ -37,6 +37,7 @@
         @endforeach
 
         {!! Form::submit('Reply', ['class'=>'btn btn-primary']) !!}
+        <a class="btn btn-primary next-question-button" href="{{ $nextQuestionLink }}" style="display: none;" role="button">Next</a>
     </div>
     {!! Form::close() !!}
 

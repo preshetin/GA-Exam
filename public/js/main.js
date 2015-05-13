@@ -1,6 +1,13 @@
 (function(){
 
-$('form.ajax').on('submit', function(e){
+    $('form.ajax').validate({
+        errorLabelContainer: "#validation-error-container",
+        messages: {
+            chosenAnswerId: "Please choose the answer."
+        }
+    });
+
+    $('form.ajax').on('submit', function(e){
 
     var form = $(this);
     var url = form.attr('action');
@@ -18,15 +25,15 @@ $('form.ajax').on('submit', function(e){
                 if (variantAnswerId == response.chosenAnswerId) {
                     var answerStatusIcon;
                     if (response.replyResult) {
-                        answerStatusIcon = "<span class=\"glyphicon glyphicon-ok-sign\" style=\"color:green;\"></span>";
+                        answerStatusIcon = "<span class=\"glyphicon glyphicon-ok\" style=\"color:green;\"></span>";
                     } else {
-                        answerStatusIcon = "<span class=\"glyphicon glyphicon-remove-sign\" style=\"color:red;\"></span>";
+                        answerStatusIcon = "<span class=\"glyphicon glyphicon-remove\" style=\"color:red;\"></span>";
                     }
                     $(this).prepend(answerStatusIcon);
                 }
 
                 if (variantAnswerId == response.correctAnswerId && !response.replyResult ) {
-                    $(this).prepend('<span class="glyphicon glyphicon-ok-sign" style="color:green;"></span>');
+                    $(this).prepend('<span class="glyphicon glyphicon-ok" style="color:green;"></span>');
                 }
             });
 

@@ -26,10 +26,11 @@
 
     {!! Form::open(['class'=>'ajax']) !!}
     <div class="form-group">
+        <div id="validation-error-container"></div>
         @foreach($answers as $answer)
             <div class="radio">
                 <label>
-                    {!! Form::radio('chosenAnswerId', $answer->id, null, ['id'=>$answer->id]) !!}
+                    {!! Form::radio('chosenAnswerId', $answer->id, null, ['id' => $answer->id, 'class' => 'required']) !!}
                     {{ $answer->description }}
                 </label>
             </div>

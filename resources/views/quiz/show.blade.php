@@ -38,6 +38,5 @@
         {!! Form::submit('Reply', ['class'=>'btn btn-primary']) !!}
     </div>
     {!! Form::close() !!}
-    <div class="reply_result"></div>
 
 @stop

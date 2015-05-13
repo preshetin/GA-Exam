@@ -30,11 +30,15 @@ class QuizController extends Controller {
 
         // save/update user answer to this question to 'replies' table
 
-        $answers = Question::find($questionId)->answers()->get();
+        $answers = Question::find($questionId)->answers();
+
+        $correctAnswerId = $answers->where('is_correct','=', true)->first()->id;
 
         return response()->json([
+            'correctAnswerId' => $correctAnswerId,
+            'chosenAnswerId' => $chosenAnswerId,
             'replyResult'=> $replyResult,
-            'answers'    => $answers
+            'answers'    => $answers->get()
         ]);
 
     }

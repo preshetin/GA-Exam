@@ -12,13 +12,26 @@ $('form.ajax').on('submit', function(e){
         dataType:'json',
         data: form.serialize(),
         success: function(response) {
-            var isCorrectText;
-            if (response.replyResult) {
-                isCorrectText = "Correct!";
-            } else {
-                isCorrectText = "Hm... Not quite.";
-            }
-            $('.reply_result').html(isCorrectText);
+
+            form.find('label').each(function (index) {
+                var variantAnswerId = $(this).find("input").val();
+                if (variantAnswerId == response.chosenAnswerId) {
+                    var answerStatusIcon;
+                    if (response.replyResult) {
+                        answerStatusIcon = "<span class=\"glyphicon glyphicon-ok-sign\" style=\"color:green;\"></span>";
+                    } else {
+                        answerStatusIcon = "<span class=\"glyphicon glyphicon-remove-sign\" style=\"color:red;\"></span>";
+                    }
+                    $(this).prepend(answerStatusIcon);
+                }
+
+                if (variantAnswerId == response.correctAnswerId && !response.replyResult ) {
+                    $(this).prepend('<span class="glyphicon glyphicon-ok-sign" style="color:green;"></span>');
+                }
+            });
+
+            form.find('input[type=radio]').hide();
+            form.find('input[type=submit]').hide();
         }
     });
 

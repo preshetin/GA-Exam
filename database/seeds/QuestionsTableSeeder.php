@@ -11,37 +11,44 @@ class QuestionsTableSeeder extends Seeder {
 
         // id: 1
         App\Question::create([
-            'description' => '2 x 2 = ?'
+            'description' => '2 x 2 = ?',
+            'topic_id' => 1
         ]);
 
         // id: 2
         App\Question::create([
-            'description' => 'Who is the founder of Facebook?'
+            'description' => 'Who is the founder of Facebook?',
+            'topic_id' => 3
         ]);
 
         // id: 3
         App\Question::create([
-            'description' => '3 x 3 = ?'
+            'description' => '3 x 3 = ?',
+            'topic_id' => 1
         ]);
 
         // id: 4
         App\Question::create([
-            'description' => '4 x 6 = ?'
+            'description' => '4 x 6 = ?',
+            'topic_id' => 1
         ]);
 
         // id: 5
         App\Question::create([
-            'description' => 'Who is NOT a Beatles team member?'
+            'description' => 'Who is NOT a Beatles team member?',
+            'topic_id' => 2
         ]);
 
         // id: 6
         App\Question::create([
-            'description' => 'Specify the song that was created by Nirvana?'
+            'description' => 'Specify the song that was created by Nirvana?',
+            'topic_id' => 2
         ]);
 
         // id: 7
         App\Question::create([
-            'description' => 'Who is the founder of Groupon?'
+            'description' => 'Who is the founder of Groupon?',
+            'topic_id' => 3
         ]);
 
     }

@@ -9,36 +9,24 @@
 
                 <div class="panel-body">
                     <p class="lead">{{ $question->description }}<p>
-                </div>
 
-                <div class="list-group">
+                    {!! Form::open(['class'=>'ajax']) !!}
+                    <div id="validation-error-container"></div>
                     @foreach($answers as $answer)
-                        <a href="#" class="list-group-item"><span class="glyphicon glyphicon-ok-sign" style="color:green;" aria-hidden="true"></span> {{ $answer->description }}</a>
+                        <div class="radio">
+                            <label>
+                                {!! Form::radio('chosenAnswerId', $answer->id, null, ['id' => $answer->id, 'class' => 'required']) !!}
+                                {{ $answer->description }}
+                            </label>
+                        </div>
                     @endforeach
 
+                    {!! Form::submit('Reply', ['class'=>'btn btn-primary']) !!}
+                    <a class="btn btn-primary next-question-button" href="{{ $nextQuestionLink }}" style="display: none;" role="button">Next</a>
+                    {!! Form::close() !!}
                 </div>
-
             </div>
-            <button class="btn btn-primary form-control" type="submit">Answer</button>
         </div>
     </div>
 </div>
-
-    {!! Form::open(['class'=>'ajax']) !!}
-    <div class="form-group">
-        <div id="validation-error-container"></div>
-        @foreach($answers as $answer)
-            <div class="radio">
-                <label>
-                    {!! Form::radio('chosenAnswerId', $answer->id, null, ['id' => $answer->id, 'class' => 'required']) !!}
-                    {{ $answer->description }}
-                </label>
-            </div>
-        @endforeach
-
-        {!! Form::submit('Reply', ['class'=>'btn btn-primary']) !!}
-        <a class="btn btn-primary next-question-button" href="{{ $nextQuestionLink }}" style="display: none;" role="button">Next</a>
-    </div>
-    {!! Form::close() !!}
-
 @stop

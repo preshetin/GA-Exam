@@ -35,7 +35,7 @@
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/') }}">Dashboard</a></li>
                     <li><a href="{{ url('/') }}">Train</a></li>
-                    <li><a href="{{ url('/') }}">Exam</a></li>
+                    <li><a href="{{ url('quiz/1') }}">Exam</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">

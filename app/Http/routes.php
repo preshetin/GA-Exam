@@ -19,5 +19,6 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
+Route::get('train', 'QuizController@train');
 Route::get('quiz/{id}', 'QuizController@show');
 Route::post('quiz/{id}', 'QuizController@reply');

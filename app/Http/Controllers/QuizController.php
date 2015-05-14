@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 
+use App\Topic;
 use App\Question;
 use App\Answer;
 use App\Http\Requests;
@@ -21,6 +22,14 @@ class QuizController extends Controller {
             'answers'  => $answers,
             'nextQuestionLink' => '/quiz/' . ++$id
         ]);
+    }
+
+    public function train() {
+
+        $topics = Topic::all();
+
+        return $topics;
+
     }
 
     public function reply($questionId) {

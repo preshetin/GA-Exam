@@ -28,8 +28,7 @@ class QuizController extends Controller {
 
         $topics = Topic::all();
 
-        return $topics;
-
+        return view('quiz.train', compact('topics'));
     }
 
     public function reply($questionId) {
@@ -50,6 +49,5 @@ class QuizController extends Controller {
             'replyResult'=> $replyResult,
             'answers'    => $answers->get()
         ]);
-
     }
 }

@@ -4,6 +4,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+            <h1>Exam</h1>
+
             <div class="panel panel-default">
                 <div class="panel-heading">Question #{{ $question->id }}</div>
 
@@ -11,7 +13,6 @@
                     <p class="lead">{{ $question->description }}<p>
 
                     {!! Form::open(['class'=>'ajax']) !!}
-                    <div id="validation-error-container"></div>
                     @foreach($answers as $answer)
                         <div class="radio">
                             <label>
@@ -21,8 +22,9 @@
                         </div>
                     @endforeach
 
-                    {!! Form::submit('Reply', ['class'=>'btn btn-primary']) !!}
-                    <a class="btn btn-primary next-question-button" href="{{ $nextQuestionLink }}" style="display: none;" role="button">Next</a>
+                    {!! Form::submit('Reply', ['class'=>'btn btn-default']) !!}
+                    <a class="btn btn-default next-question-button" href="{{ $nextQuestionLink }}" style="display: none;" role="button">Next</a>
+                    <p id="validation-error-container"></p>
                     {!! Form::close() !!}
                 </div>
             </div>

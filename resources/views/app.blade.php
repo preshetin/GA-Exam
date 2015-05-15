@@ -35,8 +35,7 @@
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/') }}">Dashboard</a></li>
                     <li><a href="{{ url('train') }}">Train</a></li>
-                    <li><a href="{{ url('quiz/1') }}">Exam</a></li>
-				</ul>
+                    </ul>
 
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())

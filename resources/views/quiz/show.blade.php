@@ -4,15 +4,16 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <h1>Exam</h1>
+            <h1>{{ $topicTitle }} Training</h1>
 
             <div class="panel panel-default">
-                <div class="panel-heading">Question #{{ $question->id }}</div>
+                <div class="panel-heading">Question #{{ $questionNumber }}</div>
 
                 <div class="panel-body">
                     <p class="lead">{{ $question->description }}<p>
 
                     {!! Form::open(['class'=>'ajax']) !!}
+                    {!! Form::hidden('questionId', $question->id) !!}
                     @foreach($answers as $answer)
                         <div class="radio">
                             <label>

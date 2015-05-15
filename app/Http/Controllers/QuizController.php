@@ -11,19 +11,6 @@ use Request;
 
 class QuizController extends Controller {
 
-	public function show($id) {
-
-        $question = Question::find($id);
-
-        $answers = $question->answers()->get();
-
-        return view('quiz.show')->with([
-            'question' => $question,
-            'answers'  => $answers,
-            'nextQuestionLink' => '/quiz/' . ++$id
-        ]);
-    }
-
     public function train() {
 
         $topics = Topic::all();
@@ -31,8 +18,26 @@ class QuizController extends Controller {
         return view('quiz.train', compact('topics'));
     }
 
-    public function reply($questionId) {
+    public function show($topicName, $questionNumber) {
 
+        $topic = Topic::where('name', '=', $topicName)->first();
+
+        $question = Question::getByTopicAndQuestionNumber($topic, $questionNumber);
+
+        $answers = $question->answers()->get();
+
+        return view('quiz.show')->with([
+            'questionNumber'   => $questionNumber,
+            'topicTitle'       => $topic->title,
+            'question'         => $question,
+            'answers'          => $answers,
+            'nextQuestionLink' => '/train/' . $topicName . '/' . ++$questionNumber
+        ]);
+    }
+
+    public function reply() {
+
+        $questionId     = Request::get('questionId');
         $chosenAnswerId = Request::get('chosenAnswerId');
 
         $replyResult = Answer::findOrFail($chosenAnswerId)->is_correct;

@@ -20,5 +20,6 @@ Route::controllers([
 ]);
 
 Route::get('train', 'QuizController@train');
-Route::get('quiz/{id}', 'QuizController@show');
-Route::post('quiz/{id}', 'QuizController@reply');
+
+Route::get('train/{topicName}/{questionNumber}', 'QuizController@show');
+Route::post('train/{topicName}/{questionNumber}', 'QuizController@reply');

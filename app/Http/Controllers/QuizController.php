@@ -4,6 +4,7 @@
 use App\Topic;
 use App\Question;
 use App\Answer;
+use App\Reply;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -42,7 +43,7 @@ class QuizController extends Controller {
 
         $replyResult = Answer::findOrFail($chosenAnswerId)->is_correct;
 
-        // save/update user answer to this question to 'replies' table
+        \Auth::user()->replies()->updateOrCreate(['question_id' => $questionId], ['is_correct' => $replyResult]);
 
         $answers = Question::find($questionId)->answers();
 

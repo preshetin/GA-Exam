@@ -30,7 +30,8 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('home');
+		return \Auth::user()->replies()->get();
+		//return view('home');
 	}
 
 }

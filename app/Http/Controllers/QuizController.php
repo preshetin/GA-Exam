@@ -12,6 +12,11 @@ use Request;
 
 class QuizController extends Controller {
 
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => 'train']);
+    }
+
     public function train() {
 
         $topics = Topic::all();
@@ -23,6 +28,7 @@ class QuizController extends Controller {
 
         $topic = Topic::where('name', '=', $topicName)->first();
 
+        // may needs to be refactored, may check sql queries
         $question = Question::getByTopicAndQuestionNumber($topic, $questionNumber);
 
         $answers = $question->answers()->get();

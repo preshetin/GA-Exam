@@ -35,7 +35,7 @@ class QuizController extends Controller {
 
         return view('quiz.show')->with([
             'questionNumber'   => $questionNumber,
-            'topicTitle'       => $topic->title,
+            'topic'            => $topic,
             'question'         => $question,
             'answers'          => $answers,
             'nextQuestionLink' => '/train/' . $topicName . '/' . ++$questionNumber

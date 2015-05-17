@@ -4,16 +4,24 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <h1>{{ $topicTitle }} Training</h1>
+            <h1>{{ $topic->title }} Training</h1>
+
+            <div class="progress">
+                <div class="progress-bar progress-bar-info" style="width: {{ ( $questionNumber * 100 ) / count($topic->questions) }}%">
+
+                </div>
+            </div>
 
             <div class="panel panel-default">
-                <div class="panel-heading">Question #{{ $questionNumber }}</div>
-
+                <div class="panel-heading">
+                    Question #{{ $questionNumber }} <div class="text-right">{{ $questionNumber }} of {{ count($topic->questions) }}</div>
+                </div>
                 <div class="panel-body">
                     <p class="lead">{{ $question->description }}<p>
 
                     {!! Form::open(['class'=>'ajax']) !!}
                     {!! Form::hidden('questionId', $question->id) !!}
+
                     @foreach($answers as $answer)
                         <div class="radio">
                             <label>

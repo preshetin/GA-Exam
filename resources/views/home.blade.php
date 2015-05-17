@@ -18,7 +18,7 @@
                                 {{ $topic->userIncorrectRepliesPercentage() }}%
                             </div>
                         </div>
-                        <p>Total questions: {{ count($topic->questions) }}. Total replies: {{ count($topic->userReplies) }}. Replied correct: {{ count($topic->userCorrectReplies) }}. Replied incorrect: {{ count($topic->userIncorrectReplies) }}</p>
+                        {{--<p>Total questions: {{ count($topic->questions) }}. Total replies: {{ count($topic->userReplies) }}. Replied correct: {{ count($topic->userCorrectReplies) }}. Replied incorrect: {{ count($topic->userIncorrectReplies) }}</p>--}}
                     @endforeach
 				</div>
 			</div>

@@ -14,7 +14,7 @@
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Question #{{ $questionNumber }} <div class="text-right">{{ $questionNumber }} of {{ count($topic->questions) }}</div>
+                    Question #{{ $questionNumber }} <div class="pull-right">{{ $questionNumber }} of {{ count($topic->questions) }}</div>
                 </div>
                 <div class="panel-body">
                     <p class="lead">{{ $question->description }}<p>

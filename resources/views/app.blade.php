@@ -28,12 +28,12 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">GA Exam</a>
+				<a class="navbar-brand" href="{{ url('/') }}">GA Exam</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="{{ url('/') }}">Dashboard</a></li>
+					<li><a href="{{ url('home') }}">Dashboard</a></li>
                     <li><a href="{{ url('train') }}">Train</a></li>
                     </ul>
 

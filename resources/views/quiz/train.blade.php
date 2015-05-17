@@ -10,7 +10,7 @@
                     @foreach($topics as $topic)
                         <a href="{{ url('train/' . $topic->name . '/1') }}" class="list-group-item">
                             <span class="badge">{{ count($topic->questions) }}</span>
-                            <h4 class="list-group-item-heading">{{ $topic->title }}</h4>
+                            <h3 class="list-group-item-heading">{{ $topic->title }}</h3>
                             <p class="list-group-item-text">{{ $topic->description }}</p>
                         </a>
                     @endforeach

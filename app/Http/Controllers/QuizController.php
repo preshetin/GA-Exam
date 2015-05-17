@@ -33,12 +33,14 @@ class QuizController extends Controller {
 
         $answers = $question->answers()->get();
 
+        $nextQuestionLink = $question->nextQuestionLink($topic, $questionNumber);
+
         return view('quiz.show')->with([
             'questionNumber'   => $questionNumber,
             'topic'            => $topic,
             'question'         => $question,
             'answers'          => $answers,
-            'nextQuestionLink' => '/train/' . $topicName . '/' . ++$questionNumber
+            'next' => $nextQuestionLink
         ]);
     }
 

@@ -9,7 +9,7 @@
 				<div class="panel-heading">Replies report</div>
 				<div class="panel-body">
                     @foreach($topics as $topic)
-                        <h4>{{ $topic->title }}</h4>
+                        <h3>{{ $topic->title }}</h3>
                         <div class="progress">
                             <div class="progress-bar progress-bar-success" style="width: {{ $topic->userCorrectRepliesPercentage() }}%">
                                 {{ $topic->userCorrectRepliesPercentage() }}%

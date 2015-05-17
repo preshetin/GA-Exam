@@ -7,7 +7,7 @@
             <h1>{{ $topic->title }} Training</h1>
 
             <div class="progress">
-                <div class="progress-bar progress-bar-info" style="width: {{ ( $questionNumber * 100 ) / count($topic->questions) }}%">
+                <div class="progress-bar progress-bar-primary" style="width: {{ ( $questionNumber * 100 ) / count($topic->questions) }}%">
 
                 </div>
             </div>
@@ -32,7 +32,7 @@
                     @endforeach
 
                     {!! Form::submit('Reply', ['class'=>'btn btn-default']) !!}
-                    <a class="btn btn-default next-question-button" href="{{ $nextQuestionLink }}" style="display: none;" role="button">Next</a>
+                    <a class="next-question-button btn {{ $next['class'] }}" href="{{ $next['url'] }}" style="display: none;" role="button">{{ $next['text'] }}</a>
                     <p id="validation-error-container"></p>
                     {!! Form::close() !!}
                 </div>

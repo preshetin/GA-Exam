@@ -34,22 +34,7 @@ class HomeController extends Controller {
 	public function index()
 	{
 
-        // Needs to be refactored!
-        $topics = \DB::table('topics')
-            ->select('topics.id as topic_id',
-                     'topics.name as topic_name',
-                     'topics.title as title',
-                     \DB::raw('count(questions.id) as total_questions,
-                               count(case when replies.is_correct = 1 then is_correct end) as correct_replies,
-                               count(case when replies.is_correct = 0 then is_correct end) as incorrect_replies'
-                     )
-            )
-            ->leftJoin('questions', 'topics.id', '=', 'questions.topic_id')
-            ->leftJoin('replies', 'replies.question_id', '=', 'questions.id')
-            ->whereNull('user_id')
-            ->orWhere('user_id', \Auth::user()->id)
-            ->groupBy('topics.id')
-            ->get();
+        $topics = Topic::all();
 
 		return view('home')->with([
             'topics' => $topics,

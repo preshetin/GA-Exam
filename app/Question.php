@@ -10,6 +10,10 @@ class Question extends Model {
         return $this->hasMany('App\Answer');
     }
 
+    public function topic() {
+        return $this->belongsTo('App\Topic');
+    }
+
     public static function getByTopicAndQuestionNumber(Topic $topic, $questionNumber) {
         return Question::where('topic_id', '=', $topic->id)->get()[$questionNumber - 1];
     }

@@ -19,7 +19,8 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::get('train', 'QuizController@train');
+Route::resource('questions', 'QuestionsController');
 
+Route::get('train', 'QuizController@train');
 Route::get('train/{topicName}/{questionNumber}', 'QuizController@show');
 Route::post('train/{topicName}/{questionNumber}', 'QuizController@reply');

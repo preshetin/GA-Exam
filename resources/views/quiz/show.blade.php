@@ -17,7 +17,7 @@
                     Question #{{ $questionNumber }} <div class="pull-right">{{ $questionNumber }} of {{ count($topic->questions) }}</div>
                 </div>
                 <div class="panel-body">
-                    <p class="lead">{{ $question->description }}<p>
+                    <p class="lead">{{ $question->description }}</p>
 
                     {!! Form::open(['class'=>'ajax']) !!}
                     {!! Form::hidden('questionId', $question->id) !!}

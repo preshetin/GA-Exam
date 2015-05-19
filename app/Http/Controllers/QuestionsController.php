@@ -4,7 +4,7 @@ use App\Question;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use Illuminate\Http\Request;
+use Request;
 
 class QuestionsController extends Controller {
 
@@ -15,7 +15,7 @@ class QuestionsController extends Controller {
 	 */
 	public function index()
 	{
-		$questions = Question::all();
+		$questions = Question::all()->sortByDesc('updated_at');
 
         return view('questions.index', compact('questions'));
 	}
@@ -27,7 +27,7 @@ class QuestionsController extends Controller {
 	 */
 	public function create()
 	{
-		//
+        return view('questions.create');
 	}
 
 	/**
@@ -37,7 +37,13 @@ class QuestionsController extends Controller {
 	 */
 	public function store()
 	{
-		//
+        $request = Request::all();
+
+        Question::create($request);
+
+        // Create Answer objects.
+
+		return redirect('questions');
 	}
 
 	/**
@@ -48,7 +54,9 @@ class QuestionsController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+		$question = Question::find($id);
+
+        return view('questions.show', compact('question'));
 	}
 
 	/**
@@ -81,7 +89,11 @@ class QuestionsController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+    	Question::destroy($id);
+
+        // Also need flash message
+
+        return redirect('questions');
 	}
 
 }

@@ -31,17 +31,21 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
-    public function replies() {
+    public function replies()
+    {
         return $this->hasMany('App\Reply');
     }
 
-    public function isAdmin() {
-        if (\Auth::user()->id == 1) {
+    public function isAdmin()
+    {
+        if ($this->id == 1)
+        {
             return true;
-        } else {
+        }
+        else
+        {
             return false;
         }
-        // return false;
     }
 
 }

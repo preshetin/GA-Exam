@@ -35,7 +35,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->hasMany('App\Reply');
     }
 
-    public function isATeamManager() {
+    public function isAdmin() {
         if (\Auth::user()->id == 1) {
             return true;
         } else {

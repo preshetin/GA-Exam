@@ -35,4 +35,13 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->hasMany('App\Reply');
     }
 
+    public function isATeamManager() {
+        if (\Auth::user()->id == 1) {
+            return true;
+        } else {
+            return false;
+        }
+        // return false;
+    }
+
 }

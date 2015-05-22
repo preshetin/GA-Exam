@@ -36,8 +36,11 @@ class HomeController extends Controller {
 
         $topics = Topic::all();
 
+        $user = \Auth::user();
+
 		return view('home')->with([
             'topics' => $topics,
+            'user' => $user
         ]);
 
 	}

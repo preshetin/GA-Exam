@@ -36,6 +36,47 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->hasMany('App\Reply');
     }
 
+    public function repliesByTopic(Topic $topic)
+    {
+        $userReplies = $this->replies;
+
+        $topicReplies = $topic->replies;
+
+        return $userReplies->intersect($topicReplies);
+    }
+
+    public function correctRepliesByTopic(Topic $topic)
+    {
+        return $this->repliesByTopic($topic)->filter(function($reply) {
+            if ($reply->is_correct == true) {
+                return true;
+            }
+        });
+    }
+
+    public function incorrectRepliesByTopic(Topic $topic)
+    {
+        return $this->repliesByTopic($topic)->filter(function($reply) {
+            if ($reply->is_correct == false) {
+                return true;
+            }
+        });
+    }
+
+    public function percentCorrectRepliesByTopic(Topic $topic)
+    {
+        $percent = count($this->correctRepliesByTopic($topic)) * 100 / count($topic->questions);
+
+        return round($percent);
+    }
+
+    public function percentIncorrectRepliesByTopic(Topic $topic)
+    {
+        $percent = count($this->incorrectRepliesByTopic($topic)) * 100 / count($topic->questions);
+
+        return round($percent);
+    }
+
     public function isAdmin()
     {
         if ($this->id == 1)

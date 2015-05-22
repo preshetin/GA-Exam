@@ -11,14 +11,13 @@
                     @foreach($topics as $topic)
                         <h3>{{ $topic->title }}</h3>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-success" style="width: {{ $topic->userCorrectRepliesPercentage() }}%">
-                                {{ $topic->userCorrectRepliesPercentage() }}%
+                            <div class="progress-bar progress-bar-success" style="width: {{ $user->percentCorrectRepliesByTopic($topic) }}%">
+                                {{ $user->percentCorrectRepliesByTopic($topic) }}%
                             </div>
-                            <div class="progress-bar progress-bar-danger" style="width: {{ $topic->userIncorrectRepliesPercentage() }}%">
-                                {{ $topic->userIncorrectRepliesPercentage() }}%
+                            <div class="progress-bar progress-bar-danger" style="width: {{ $user->percentIncorrectRepliesByTopic($topic) }}%">
+                                {{ $user->percentIncorrectRepliesByTopic($topic) }}%
                             </div>
                         </div>
-                        {{--<p>Total questions: {{ count($topic->questions) }}. Total replies: {{ count($topic->userReplies) }}. Replied correct: {{ count($topic->userCorrectReplies) }}. Replied incorrect: {{ count($topic->userIncorrectReplies) }}</p>--}}
                     @endforeach
 				</div>
 			</div>

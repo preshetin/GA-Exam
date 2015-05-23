@@ -41,11 +41,10 @@ class QuestionsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Requests\CreateQuestionRequest $request)
 	{
-        $request = Request::all();
 
-        Question::create($request);
+        Question::create($request->all());
 
         // Create Answer objects.
 

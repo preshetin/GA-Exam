@@ -6,6 +6,8 @@
             <div class="col-md-8 col-md-offset-2">
                 <h1>New Question</h1>
 
+                @include('errors.list')
+                
                 {!! Form::open(['url' => action("QuestionsController@store")]) !!}
 
                 <div class="form-group">

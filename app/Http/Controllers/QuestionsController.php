@@ -44,11 +44,35 @@ class QuestionsController extends Controller {
 	public function store(Requests\CreateQuestionRequest $request)
 	{
 
-        Question::create($request->all());
+        $question = Question::create($request->all());
 
-        // Create Answer objects.
+        //required answer
+        $answer_description_1 = $request->answer_description_1;
+        $answer_is_correct_1 = $request->answer_is_correct_1;
+        $question->answers()->create(['description' => $answer_description_1, 'is_correct' => $answer_is_correct_1]);
 
-		return redirect('questions');
+        // required answer
+        $answer_description_2 = $request->answer_description_2;
+        $answer_is_correct_2 = $request->answer_is_correct_2;
+        $question->answers()->create(['description' => $answer_description_2, 'is_correct' => $answer_is_correct_2]);
+
+        // optional answer
+        $answer_description_3 = $request->answer_description_3;
+        $answer_is_correct_3 = $request->answer_is_correct_3;
+        if (isset($answer_description_3) && isset($answer_is_correct_3)) {
+            $question->answers()->create(['description' => $answer_description_3, 'is_correct' => $answer_is_correct_3]);
+        }
+
+        // optional answer
+        $answer_description_4 = $request->answer_description_4;
+        $answer_is_correct_4 = $request->answer_is_correct_4;
+        if (isset($answer_description_4) && isset($answer_is_correct_4)) {
+            $question->answers()->create(['description' => $answer_description_4, 'is_correct' => $answer_is_correct_4]);
+        }
+
+
+
+        return redirect('questions');
 	}
 
 	/**

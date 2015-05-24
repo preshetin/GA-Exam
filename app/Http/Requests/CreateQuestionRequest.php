@@ -23,6 +23,8 @@ class CreateQuestionRequest extends Request {
 	{
 		return [
 			'description' =>'required|min:3',
+            'answer_description_1' =>'required',
+            'answer_description_2' =>'required',
             'topic_id'    => 'required'
 		];
 	}

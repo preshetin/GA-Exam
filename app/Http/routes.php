@@ -20,6 +20,7 @@ Route::controllers([
 ]);
 
 Route::resource('questions', 'QuestionsController');
+Route::resource('topics', 'TopicsController');
 
 Route::get('train', 'QuizController@train');
 Route::get('train/{topicName}/{questionNumber}', 'QuizController@show');

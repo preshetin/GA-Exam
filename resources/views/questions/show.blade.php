@@ -8,7 +8,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <a href="{{ action('QuestionsController@index') }}" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Back</a>
-                        <a href="{{ action('QuestionsController@edit', $question->id) }}" class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</a>
+                        {{--<a href="{{ action('QuestionsController@edit', $question->id) }}" class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</a>--}}
 
                         {!! Form::open(['url' => action('QuestionsController@destroy', $question->id), 'method' => 'delete']) !!}
                             {!! Form::submit('Delete', ['class'=>'btn btn-danger']) !!}

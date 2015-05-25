@@ -10,7 +10,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <a href="{{ action('QuestionsController@show', $question->id) }}" class="btn btn-default"> Show</a>
-                            <a href="{{ action('QuestionsController@edit', $question->id) }}" class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</a>
+                            {{--<a href="{{ action('QuestionsController@edit', $question->id) }}" class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</a>--}}
                         </div>
                         <div class="panel-body">
                             <div class="pull-right"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> {{ $question->topic->title }}</div>

@@ -37,11 +37,11 @@
                     <li><a href="{{ url('train') }}">Train</a></li>
                     @if(\Auth::user() && \Auth::user()->isAdmin())
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Manage <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
+                            {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Manage <span class="caret"></span></a>--}}
+                            {{--<ul class="dropdown-menu" role="menu">--}}
                                 <li><a href="{{ url('questions') }}"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Questions</a></li>
                                 <li><a href="{{ url('topics') }}"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> Topics</a></li>
-                            </ul>
+                            {{--</ul>--}}
                         </li>
 
                     @endif

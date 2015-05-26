@@ -14,6 +14,7 @@
                                     <p class="list-group-item-text">{{ $topic->description }}</p>
                                 </td>
                                 <td>
+                                    <a href="{{ url('topics/' . $topic->id . '/edit' ) }}" class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true">Edit</span></a>
                                     {!! Form::open(['url' => action('TopicsController@destroy', $topic->id), 'method' => 'delete']) !!}
                                     {!! Form::submit('Delete', ['class'=>'btn btn-danger pull-right']) !!}
                                     {!! Form::close() !!}

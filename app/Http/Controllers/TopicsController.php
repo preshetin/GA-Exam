@@ -72,7 +72,11 @@ class TopicsController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+
+
+        $topic = Topic::findOrFail($id);
+
+		return view('topics.edit', compact('topic'));
 	}
 
 	/**
@@ -81,9 +85,19 @@ class TopicsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id, Request $request)
 	{
-		//
+        $this->validate($request, [
+            'name' => 'required',
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+
+        $topic = Topic::findOrFail($id);
+
+        $topic->update($request->all());
+
+        return redirect('topics');
 	}
 
 	/**

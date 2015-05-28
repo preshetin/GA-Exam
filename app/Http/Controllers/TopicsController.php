@@ -73,7 +73,6 @@ class TopicsController extends Controller {
 	public function edit($id)
 	{
 
-
         $topic = Topic::findOrFail($id);
 
 		return view('topics.edit', compact('topic'));

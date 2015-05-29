@@ -48,7 +48,9 @@ class TopicsController extends Controller {
             'description' => 'required',
         ]);
 
-        Topic::create($request->all());
+        $topic = Topic::create($request->all());
+
+        \Session::flash('success', $topic->name . ' topic is successfully created.');
 
         return redirect('topics');
 	}
@@ -95,6 +97,8 @@ class TopicsController extends Controller {
         $topic = Topic::findOrFail($id);
 
         $topic->update($request->all());
+
+        \Session::flash('success', $topic->name . ' topic is successfully updated.');
 
         return redirect('topics');
 	}

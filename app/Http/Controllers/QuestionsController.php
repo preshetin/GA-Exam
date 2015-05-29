@@ -70,8 +70,8 @@ class QuestionsController extends Controller {
             $question->answers()->create(['description' => $answer_description_4, 'is_correct' => $answer_is_correct_4]);
         }
 
-
-
+        \Session::flash('success', 'The question is successfully created.');
+        
         return redirect('questions');
 	}
 

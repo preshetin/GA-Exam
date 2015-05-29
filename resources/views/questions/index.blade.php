@@ -4,6 +4,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
+
+                @if(Session::has('success'))
+                    <div class="alert alert-success" role="alert">
+                        {{ Session::get('success') }}
+                    </div>
+                @endif
+
                 <h1>Questions <a href="{{ action('QuestionsController@create') }}" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New</a>
                 </h1>
                 @foreach($questions as $question)

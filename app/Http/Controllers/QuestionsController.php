@@ -71,7 +71,7 @@ class QuestionsController extends Controller {
         }
 
         \Session::flash('success', 'The question is successfully created.');
-        
+
         return redirect('questions');
 	}
 
@@ -120,7 +120,7 @@ class QuestionsController extends Controller {
 	{
     	Question::destroy($id);
 
-        // Also need flash message
+        \Session::flash('success', 'Question is successfully deleted.');
 
         return redirect('questions');
 	}

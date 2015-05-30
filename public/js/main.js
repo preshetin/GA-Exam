@@ -7,6 +7,18 @@
         }
     });
 
+    $('form').on('submit', function(e) {
+
+        var formMethod = $(this).find('input[name="_method"]').val();
+
+        if (formMethod == 'DELETE') {
+            var confirmAction = confirm('Are you sure you want to delete it?');
+            if (confirmAction == false) {
+                e.preventDefault();
+            }
+        }
+    });
+
     $('form.ajax').on('submit', function(e){
 
         if ($('form.ajax').validate().errorList.length == 0) {

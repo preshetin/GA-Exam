@@ -113,6 +113,8 @@ class TopicsController extends Controller {
 	{
         Topic::destroy($id);
 
+        \Session::flash('success', 'Topic is deleted.');
+
         return redirect('topics');
 	}
 

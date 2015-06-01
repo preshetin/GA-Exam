@@ -14,6 +14,10 @@
 Route::get('/', 'WelcomeController@index');
 Route::get('home', 'HomeController@index');
 
+Route::get('users', ['middleware' => 'manager', function() {
+    return App\User::all();
+}]);
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

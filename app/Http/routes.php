@@ -18,10 +18,18 @@ Route::get('users', ['middleware' => 'manager', function() {
     return App\User::all();
 }]);
 
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
+/* Authentication routes start */
+Route::get('login', ['middleware'=>'guest', function() {
+    return view('login');
+}]);
+
+Route::get('logout', function() {
+    Auth::logout();
+    return redirect('login');
+});
+
+Route::get('oauth/github', 'AuthController@login');
+/* Authentication routes end */
 
 Route::resource('questions', 'QuestionsController');
 Route::resource('topics', 'TopicsController');

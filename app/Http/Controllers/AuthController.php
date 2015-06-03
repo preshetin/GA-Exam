@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller implements AuthenticateUserListener {
 
-	public function login(AuthenticateUser $authenticateUser, Request $request)
+	public function login($provider, AuthenticateUser $authenticateUser, Request $request)
     {
-        return $authenticateUser->execute($request->has('code'), $this);
+        return $authenticateUser->execute($provider, $request->has('code'), $this);
     }
 
     public function userHasLoggedIn($user)

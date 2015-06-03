@@ -29,25 +29,27 @@ class AuthenticateUser {
         $this->auth = $auth;
     }
 
-    public function execute($hasCode, AuthenticateUserListener $listener)
+    public function execute($provider, $hasCode, AuthenticateUserListener $listener)
     {
-        if (! $hasCode ) return $this->getAuthorizationFirst();
+        if (! $hasCode ) return $this->getAuthorizationFirst($provider);
 
-        $user = $this->users->findByUsernameOrCreate($this->getGithubUser());
+        $user = $this->users->findByUsernameOrCreate($provider, $this->getProviderUser($provider));
 
         $this->auth->login($user, true);
 
         return $listener->userHasLoggedIn($user);
     }
 
-    private function getAuthorizationFirst()
+    private function getAuthorizationFirst($provider)
     {
-        return \Socialite::driver('github')->redirect();
+        return \Socialite::driver($provider)->redirect();
     }
 
-    private function getGithubUser()
+    private function getProviderUser($provider)
     {
-        return $this->socialite->driver('github')->user();
+//        dd($this->socialite->driver($provider)->user());
+
+        return $this->socialite->driver($provider)->user();
     }
 
 }

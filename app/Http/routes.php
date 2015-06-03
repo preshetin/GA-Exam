@@ -28,7 +28,9 @@ Route::get('logout', function() {
     return redirect('login');
 });
 
-Route::get('oauth/github', 'AuthController@login');
+Route::get('oauth/{provider}', 'AuthController@login')->where([
+    'provider'=>'(facebook|github)'
+]);
 /* Authentication routes end */
 
 Route::resource('questions', 'QuestionsController');

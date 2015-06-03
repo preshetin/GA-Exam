@@ -31,9 +31,24 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
+    /**
+     * User may have many question replies.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function replies()
     {
         return $this->hasMany('App\Reply');
+    }
+
+    /**
+     * Get any available user name to display.
+     *
+     * @return mixed
+     */
+    public function anyName()
+    {
+        return current(array_filter([$this->name, $this->nickname, $this->email]));
     }
 
     public function repliesByTopic(Topic $topic)

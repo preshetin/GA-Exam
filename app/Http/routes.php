@@ -29,7 +29,7 @@ Route::get('logout', function() {
 });
 
 Route::get('oauth/{provider}', 'AuthController@login')->where([
-    'provider'=>'(facebook|github)'
+    'provider'=>'(facebook|google)'
 ]);
 /* Authentication routes end */
 

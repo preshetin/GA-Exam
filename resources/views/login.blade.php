@@ -11,11 +11,11 @@
 
                     @include('errors.list')
 
-                    <a href="oauth/github" class="btn btn-lg btn-info btn-block">Log in with Github</a>
-
                     <a href="oauth/facebook" class="btn btn-lg btn-primary btn-block">Log in with Facebook</a>
 
-				</div>
+                    <a href="oauth/google" class="btn btn-lg btn-danger btn-block">Log in with Google</a>
+
+                </div>
 			</div>
 		</div>
 	</div>

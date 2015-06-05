@@ -50,6 +50,8 @@
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            margin-bottom: 15px;
+            margin-top: 15px;
         }
 
         .title {
@@ -59,6 +61,7 @@
         .quote {
             font-size: 20px;
             margin-bottom: 10px;
+            margin-top: 15px;
         }
     </style>
 
@@ -70,7 +73,7 @@
 <link href="/css/jquery.bxslider.css" rel="stylesheet" />
 
     <div class="container">
-                <div class="title">Google Analytics Exam</div>
+                <div class="title"><i class="fa fa-graduation-cap" style="font-size:220%;"></i><br />Google Analytics Exam</div>
                 <p class="quote">Prepare yourself for GA exam by training on quiz questions</p>
 
                 <div class="slider">

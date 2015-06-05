@@ -11,10 +11,8 @@
 
                     @include('errors.list')
 
-                    <a href="oauth/facebook" class="btn btn-lg btn-primary btn-block">Log in with Facebook</a>
-
-                    <a href="oauth/google" class="btn btn-lg btn-danger btn-block">Log in with Google</a>
-
+                    <a href="oauth/facebook" class="btn btn-block btn-social btn-lg btn-facebook"><i class="fa fa-facebook"></i>Log in with Facebook</a>
+                    <a href="oauth/google" class="btn btn-block btn-social btn-lg btn-google"><i class="fa fa-google"></i>Log in with Google</a>
                 </div>
 			</div>
 		</div>

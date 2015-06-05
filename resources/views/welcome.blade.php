@@ -15,6 +15,7 @@
 
     <link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/bootstrap-social.css') }}" rel="stylesheet">
 
     <!-- Fonts -->
     <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
@@ -63,7 +64,7 @@
 
 </head>
 <body class="vertical-center">
-
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script src="/js/jquery.bxslider.min.js"></script>
 <link href="/css/jquery.bxslider.css" rel="stylesheet" />
@@ -80,8 +81,8 @@
                     </ul>
                 </div>
 
-                <a href="oauth/facebook" class="btn btn-lg btn-primary btn-block">Log in with Facebook</a>
-                <a href="oauth/google" class="btn btn-lg btn-danger btn-block">Log in with Google</a>
+                <a href="oauth/facebook" class="btn btn-block btn-social btn-lg btn-facebook"><i class="fa fa-facebook"></i>Log in with Facebook</a>
+                <a href="oauth/google" class="btn btn-block btn-social btn-lg btn-google"><i class="fa fa-google"></i>Log in with Google</a>
     </div>
     <script>
         $(document).ready(function(){

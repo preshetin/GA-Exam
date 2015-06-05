@@ -31,13 +31,18 @@
         body {
             margin: 0;
             padding: 0;
-            width: 100%;
-            height: 100%;
             color: #B0BEC5;
             font-weight: 100;
             font-family: 'Roboto';
             text-align: center;
-            vertical-align: middle;
+
+        }
+
+        .vertical-center {
+            min-height: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
         }
 
         .container {
@@ -57,13 +62,12 @@
     </style>
 
 </head>
-<body>
+<body class="vertical-center">
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script src="/js/jquery.bxslider.min.js"></script>
 <link href="/css/jquery.bxslider.css" rel="stylesheet" />
 
-<center style="margin-bottom: 10px">
     <div class="container">
                 <div class="title">Google Analytics Exam</div>
                 <p class="quote">Prepare yourself for GA exam by training on quiz questions</p>
@@ -79,7 +83,6 @@
                 <a href="oauth/facebook" class="btn btn-lg btn-primary btn-block">Log in with Facebook</a>
                 <a href="oauth/google" class="btn btn-lg btn-danger btn-block">Log in with Google</a>
     </div>
-</center>
     <script>
         $(document).ready(function(){
             $('.bxslider').bxSlider({

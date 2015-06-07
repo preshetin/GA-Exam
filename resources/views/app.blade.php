@@ -35,9 +35,11 @@
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="{{ url('home') }}">Dashboard</a></li>
-                    <li><a href="{{ url('train') }}">Train</a></li>
-                    @if(\Auth::user() && \Auth::user()->isAdmin())
+					<li><a href="{{ url('home') }}"><i class="fa fa-bar-chart"></i> Результаты</a></li>
+                    <li><a href="{{ url('train') }}"><i class="fa fa-bicycle"></i> Тренировка</a></li>
+                    <li><a href="{{ url('about-gaiq-exam') }}"><i class="fa fa-certificate"></i> Об экзамене GAIQ</a></li>
+                    <li><a href="{{ url('about') }}"><i class="fa fa-envelope-o"></i> О проекте</a></li>
+                @if(\Auth::user() && \Auth::user()->isAdmin())
                         <li class="dropdown">
                             {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Manage <span class="caret"></span></a>--}}
                             {{--<ul class="dropdown-menu" role="menu">--}}

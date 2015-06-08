@@ -37,8 +37,6 @@
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('home') }}"><i class="fa fa-bar-chart"></i> Результаты</a></li>
                     <li><a href="{{ url('train') }}"><i class="fa fa-bicycle"></i> Тренировка</a></li>
-                    <li><a href="{{ url('about-gaiq-exam') }}"><i class="fa fa-certificate"></i> Об экзамене GAIQ</a></li>
-                    <li><a href="{{ url('about') }}"><i class="fa fa-envelope-o"></i> О проекте</a></li>
                 @if(\Auth::user() && \Auth::user()->isAdmin())
                         <li class="dropdown">
                             {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Manage <span class="caret"></span></a>--}}
@@ -69,6 +67,12 @@
 	</nav>
 
 	@yield('content')
+
+    <div class="mastfoot">
+        <div class="inner">
+            <p><a href="{{ url('about-gaiq-exam') }}"><i class="fa fa-certificate"></i> Об экзамене GAIQ</a> <a href="{{ url('about') }}"><i class="fa fa-rocket"></i> О проекте</a> <a href="{{ url('contact') }}"><i class="fa fa-envelope-o"></i>  Контакты</a></p>
+        </div>
+    </div>
 
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

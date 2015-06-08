@@ -4,12 +4,11 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                {{--<h1>О проекте</h1>--}}
+                <h1>О проекте</h1>
                 <div class="panel panel-default">
-                    <div class="panel-heading">О проекте</div>
                     <div class="panel-body">
 
-                        <h1>О проекте</h1>
+                        {{--<h1>О проекте</h1>--}}
                         <p>GA Exam позволяет подготовиться к официальному экзамену по Google Analytics. На сайте представлено 30 вопросов. Ответы на вопросы даны экспертные, соответственно точность ответов около 95%.</p>
                         <p><b>Важно:</b> компания Google не имеет никакого отношения к данному проекту.</p>
 

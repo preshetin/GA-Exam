@@ -21,4 +21,9 @@ class PagesController extends Controller {
         return view('pages.about-gaiq-exam');
     }
 
+    public function contact()
+    {
+        return view('pages.contact');
+    }
+
 }

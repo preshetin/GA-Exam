@@ -18,7 +18,7 @@ class AddTopicIdToQuestionsTable extends Migration {
 
             $table->foreign('topic_id')
                 ->references('id')->on('topics')
-                ->onDelete('cascade')
+                ->onDelete('set null')
                 ->onUpdate('cascade');
         });
 	}

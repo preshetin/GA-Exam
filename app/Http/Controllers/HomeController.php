@@ -34,7 +34,7 @@ class HomeController extends Controller {
 	public function index()
 	{
 
-        $topics = Topic::all();
+        $topics = Topic::has('questions')->get();
 
         $user = \Auth::user();
 

@@ -10,17 +10,15 @@
 				<div class="panel-body">
                     @if(count($user->replies))
                         @foreach($topics as $topic)
-                            @if (count($topic->questions))
-                                <h3><a href="{{ url('train/'. $topic->name . '/1') }}">{{ $topic->title }}</a></h3>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-success" style="width: {{ $user->percentCorrectRepliesByTopic($topic) }}%">
-                                        {{ $user->percentCorrectRepliesByTopic($topic) }}%
-                                    </div>
-                                    <div class="progress-bar progress-bar-danger" style="width: {{ $user->percentIncorrectRepliesByTopic($topic) }}%">
-                                        {{ $user->percentIncorrectRepliesByTopic($topic) }}%
-                                    </div>
+                            <h3><a href="{{ url('train/'. $topic->name . '/1') }}">{{ $topic->title }}</a></h3>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-success" style="width: {{ $user->percentCorrectRepliesByTopic($topic) }}%">
+                                    {{ $user->percentCorrectRepliesByTopic($topic) }}%
                                 </div>
-                            @endif
+                                <div class="progress-bar progress-bar-danger" style="width: {{ $user->percentIncorrectRepliesByTopic($topic) }}%">
+                                    {{ $user->percentIncorrectRepliesByTopic($topic) }}%
+                                </div>
+                            </div>
                         @endforeach
                     @else
                         <div style="text-align: center; color: grey;">

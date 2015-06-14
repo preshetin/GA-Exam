@@ -4,5 +4,5 @@
 .env
 
 # Ignore CSS & Map Files as they are compiled by Less
-public/css/app.css
-public/css/app.css.map
+public/css/*.css
+public/css/*.css.map

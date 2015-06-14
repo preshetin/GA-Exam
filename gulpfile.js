@@ -13,4 +13,10 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
     mix.less('app.less');
+
+    mix.styles([
+        "app.css",
+        "bootstrap-social.css",
+        "font-awesome.min.css"
+    ], 'public/css/main.css', 'public/css');
 });

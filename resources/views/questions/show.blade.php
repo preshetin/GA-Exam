@@ -16,8 +16,9 @@
 
                     </div>
                     <div class="panel-body">
-                        <div class="pull-right"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> {{ $question->topic->title }}</div>
-
+                        @if ($question->topic)
+                            <div class="pull-right"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> {{ $question->topic->title }}</div>
+                        @endif
                         <p class="lead">{{ $question->description }}</p>
                         <ul>
                             @foreach($question->answers as $answer)

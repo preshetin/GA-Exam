@@ -6,3 +6,5 @@
 # Ignore CSS & Map Files as they are compiled by Less
 public/css/*.css
 public/css/*.css.map
+
+public/images

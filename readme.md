@@ -17,6 +17,18 @@ A simple quiz application made on Laravel 5.
 ### 3. Get replies stats
 ![Get replies stats](http://www.gatest.ru/images/slider_image_3.png)
 
+## Database structure
+
+Database contains there tables:
+- questions
+  - id
+  - descripition
+  - topic_id
+- answers
+- replies
+- topics
+- users
+
 ## Demo
 
 Production site is located at  [www.gatest.ru](http://www.gatest.ru)

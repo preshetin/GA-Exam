@@ -19,15 +19,35 @@ A simple quiz application made on Laravel 5.
 
 ## Database structure
 
-Database contains there tables:
+Database contains these tables:
 - questions
   - id
-  - descripition
+  - description
   - topic_id
 - answers
+  - id
+  - description
+  - is_correct
+  - question_id
 - replies
+  - id
+  - question_id
+  - user_id
+  - is_correct
 - topics
+  - id
+  - name
+  - title
+  - description
 - users
+  - id
+  - prodiver
+  - provider_id
+  - email
+  - name
+  - nickname
+  - avatar
+  - remember_token
 
 ## Demo
 

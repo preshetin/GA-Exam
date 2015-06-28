@@ -86,8 +86,8 @@
 <link href="/css/jquery.bxslider.css" rel="stylesheet" />
 
     <div class="container">
-                <div class="title"><i class="fa fa-graduation-cap" style="font-size:220%;"></i><br />Google Analytics Exam</div>
-                <p class="quote">Prepare yourself for GA exam by training on quiz questions</p>
+                <div class="title"><i class="fa fa-graduation-cap" style="font-size:220%;"></i><br />Google Analytics Test</div>
+                <p class="quote">Проверьте свои знания по GA, пройдя тестирование по разным темам</p>
 
                 <div class="slider">
                     <ul class="bxslider">
@@ -97,8 +97,8 @@
                     </ul>
                 </div>
 
-                <a href="oauth/facebook" class="btn btn-block btn-social btn-lg btn-facebook"><i class="fa fa-facebook"></i>Log in with Facebook</a>
-                <a href="oauth/google" class="btn btn-block btn-social btn-lg btn-google"><i class="fa fa-google"></i>Log in with Google</a>
+                <a href="oauth/facebook" class="btn btn-block btn-social btn-lg btn-facebook"><i class="fa fa-facebook"></i>Войти с помощью Facebook</a>
+                <a href="oauth/google" class="btn btn-block btn-social btn-lg btn-google"><i class="fa fa-google"></i>Войти с помощью Google</a>
     </div>
     <script>
         $(document).ready(function(){

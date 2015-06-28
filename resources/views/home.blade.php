@@ -22,8 +22,8 @@
                         @endforeach
                     @else
                         <div style="text-align: center; color: grey;">
-                            <h3>No replies stats.</h3>
-                            <p class="lead" >Try to challenge <a href="/train/math/1">Mathematics</a>, <a href="/train/music/1">Music&Artists</a> or <a href="/train/startups/1">Startups</a> topics.</p>
+                            <h3>У вас нет ответов на вопросы</h3>
+                            <p class="lead" >Попробуйте пройти, например, тест по <a href="/train/campaigns/1">Рекламным кампаниям</a>.</p>
                         </div>
                     @endif
 

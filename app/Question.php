@@ -24,11 +24,11 @@ class Question extends Model {
 
         if (count($topic->questions) != $questionNumber) {
             $nextQuestionLink['url']   = '/train/' . $topic->name . '/' . ++$questionNumber;
-            $nextQuestionLink['text']  = 'Next';
+            $nextQuestionLink['text']  = 'Следующий вопрос';
             $nextQuestionLink['class'] = 'btn-default';
         } else {
             $nextQuestionLink['url']   = '/';
-            $nextQuestionLink['text']  = 'Finish';
+            $nextQuestionLink['text']  = 'Завершить';
             $nextQuestionLink['class'] = 'btn-primary';
         }
 

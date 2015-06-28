@@ -4,9 +4,9 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
-            <h1>Hello, {{ $user->name }}</h1>
+            <h1>Привет, {{ $user->name }}</h1>
 			<div class="panel panel-default">
-				<div class="panel-heading">Replies report</div>
+				<div class="panel-heading">Успеваемость по темам</div>
 				<div class="panel-body">
                     @if(count($user->replies))
                         @foreach($topics as $topic)

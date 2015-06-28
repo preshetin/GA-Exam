@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <h1>Train</h1>
+                <h1>Тренировка</h1>
 
                 <div class="list-group">
                     @foreach($topics as $topic)

@@ -34,7 +34,6 @@
             padding: 0;
             color: #B0BEC5;
             font-weight: 100;
-            font-family: 'Roboto';
             text-align: center;
 
         }

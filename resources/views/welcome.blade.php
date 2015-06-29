@@ -55,7 +55,7 @@
         }
 
         .title {
-            font-size: 35px;
+            font-size: 27px;
         }
 
         .quote {
@@ -86,7 +86,7 @@
 <link href="/css/jquery.bxslider.css" rel="stylesheet" />
 
     <div class="container">
-                <div class="title"><i class="fa fa-graduation-cap" style="font-size:220%;"></i><br />Google Analytics Test</div>
+                <div class="title"><i class="fa fa-graduation-cap" style="font-size:180%;"></i><br />Google Analytics Test</div>
                 <p class="quote">Проверьте свои знания по GA, пройдя тестирование по разным темам</p>
 
                 <div class="slider">
@@ -97,8 +97,8 @@
                     </ul>
                 </div>
 
-                <a href="oauth/facebook" class="btn btn-block btn-social btn-lg btn-facebook"><i class="fa fa-facebook"></i>Войти с помощью Facebook</a>
-                <a href="oauth/google" class="btn btn-block btn-social btn-lg btn-google"><i class="fa fa-google"></i>Войти с помощью Google</a>
+                <a href="oauth/facebook" class="btn btn-block btn-social btn-lg btn-facebook"><i class="fa fa-facebook"></i>Войти через Facebook</a>
+                <a href="oauth/google" class="btn btn-block btn-social btn-lg btn-google"><i class="fa fa-google"></i>Войти через Google</a>
     </div>
     <script>
         $(document).ready(function(){

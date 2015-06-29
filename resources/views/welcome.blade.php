@@ -55,7 +55,7 @@
         }
 
         .title {
-            font-size: 27px;
+            font-size: 26px;
         }
 
         .quote {
@@ -86,7 +86,7 @@
 <link href="/css/jquery.bxslider.css" rel="stylesheet" />
 
     <div class="container">
-                <div class="title"><i class="fa fa-graduation-cap" style="font-size:180%;"></i><br />Google Analytics Test</div>
+                <div class="title"><i class="fa fa-graduation-cap" style="font-size:140%;"></i><br />Google Analytics Test</div>
                 <p class="quote">Проверьте свои знания по GA, пройдя тестирование по разным темам</p>
 
                 <div class="slider">

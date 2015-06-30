@@ -82,27 +82,25 @@
 <link href="/css/jquery.bxslider.css" rel="stylesheet" />
 
     <div class="container">
-                <div class="title"><i class="fa fa-graduation-cap" style="font-size:140%;"></i><br />Google Analytics Test</div>
-                <p class="quote">Проверьте свои знания по GA, пройдя тестирование по разным темам</p>
+        <div class="title"><i class="fa fa-graduation-cap" style="font-size:140%;"></i><br />Google Analytics Test</div>
+        <p class="quote">Проверьте свои знания по GA, пройдя тестирование по разным темам</p>
 
-                <div class="slider">
-                    <ul class="bxslider">
-                        <li><img class="slider_image" src="/images/slider_image_1.png" /></li>
-                        <li><img class="slider_image" src="/images/slider_image_2.png" /></li>
-                        <li><img class="slider_image" src="/images/slider_image_3.png" /></li>
-                    </ul>
-                </div>
+        <div class="slider">
+            <ul class="bxslider">
+                <li><img class="slider_image" src="/images/slider_image_1.png" /></li>
+                <li><img class="slider_image" src="/images/slider_image_2.png" /></li>
+                <li><img class="slider_image" src="/images/slider_image_3.png" /></li>
+            </ul>
+        </div>
 
-                <a href="oauth/facebook" class="btn btn-block btn-social btn-lg btn-facebook"><i class="fa fa-facebook"></i>Войти через Facebook</a>
-                <a href="oauth/google" class="btn btn-block btn-social btn-lg btn-google"><i class="fa fa-google"></i>Войти через Google</a>
+        <a href="oauth/facebook" class="btn btn-block btn-social btn-lg btn-facebook"><i class="fa fa-facebook"></i>Войти через Facebook</a>
+        <a href="oauth/google" class="btn btn-block btn-social btn-lg btn-google"><i class="fa fa-google"></i>Войти через Google</a>
 
         <div class="mastfoot">
             <div class="inner">
                 <p><a href="{{ url('about-gaiq-exam') }}"><i class="fa fa-certificate"></i> Об экзамене GAIQ</a> <a href="{{ url('about') }}"><i class="fa fa-rocket"></i> О проекте</a> <a href="{{ url('contact') }}"><i class="fa fa-envelope-o"></i>  Контакты</a></p>
             </div>
         </div>
-
-
     </div>
     <script>
         $(document).ready(function(){

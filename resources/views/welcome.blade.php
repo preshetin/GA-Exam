@@ -9,7 +9,7 @@
     <meta property="og:title" content="Подготовка к экзамену по Google Analytics" />
     <meta property="og:site_name" content="GA Test"/>
     <meta property="og:url" content="http://www.gatest.ru/" />
-    <meta property="og:image" content="http://www.gatest.ru/images/slider_image_1.png" />
+    <meta property="og:image" content="http://www.gatest.ru/images/facebook_share_image.png" />
     <meta property="fb:app_id" content="389709951229208" />
     <meta property="og:description" content="GA Test помогает подготовиться к официальному экзамену по Google Analytics (GAIQ). Проверьте свои знания по GA, пройдя тестирование по разным темам." />
 

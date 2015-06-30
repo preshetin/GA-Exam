@@ -76,6 +76,18 @@
 
 </head>
 <body class="vertical-center welcome-page">
+
+<!-- Facebook Like button start -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.3&appId=389709951229208";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+<!-- Facebook Like button end -->
+
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script src="/js/jquery.bxslider.min.js"></script>
@@ -99,6 +111,9 @@
         <div class="mastfoot">
             <div class="inner">
                 <p><a href="{{ url('about-gaiq-exam') }}"><i class="fa fa-certificate"></i> Об экзамене GAIQ</a> <a href="{{ url('about') }}"><i class="fa fa-rocket"></i> О проекте</a> <a href="{{ url('contact') }}"><i class="fa fa-envelope-o"></i>  Контакты</a></p>
+
+                <div class="fb-like" data-href="http://www.gatest.ru/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+
             </div>
         </div>
     </div>

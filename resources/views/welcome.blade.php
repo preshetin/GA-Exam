@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: http://ogp.me/ns#>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Google Analytics Exam</title>
+    <title>GA Test - тесты по Google Analytics</title>
+
+    <meta property="og:title" content="Подготовка к экзамену по Google Analytics" />
+    <meta property="og:site_name" content="GA Test"/>
+    <meta property="og:url" content="http://www.gatest.ru/" />
+    <meta property="og:image" content="http://www.gatest.ru/images/slider_image_1.png" />
+    <meta property="fb:app_id" content="389709951229208" />
+    <meta property="og:description" content="GA Test помогает подготовиться к официальному экзамену по Google Analytics (GAIQ). Проверьте свои знания по GA, пройдя тестирование по разным темам." />
 
     <!-- jQuery library (served from Google) -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>

@@ -22,6 +22,13 @@ Route::get('users', ['middleware' => 'manager', function() {
     return App\User::all();
 }]);
 
+Route::get('users/{id}/emulate', ['middleware' => 'manager', function($id) {
+
+    \Auth::loginUsingId($id);
+
+    return redirect('home');
+}]);
+
 /* Authentication routes start */
 Route::get('login', ['middleware'=>'guest', function() {
     return view('login');

@@ -18,17 +18,6 @@ Route::get('about', 'PagesController@about');
 Route::get('about-gaiq-exam', 'PagesController@aboutGaiqExam');
 Route::get('contact', 'PagesController@contact');
 
-Route::get('users', ['middleware' => 'manager', function() {
-    return App\User::all();
-}]);
-
-Route::get('users/{id}/emulate', ['middleware' => 'manager', function($id) {
-
-    \Auth::loginUsingId($id);
-
-    return redirect('home');
-}]);
-
 /* Authentication routes start */
 Route::get('login', ['middleware'=>'guest', function() {
     return view('login');
@@ -46,6 +35,7 @@ Route::get('oauth/{provider}', 'AuthController@login')->where([
 
 Route::resource('questions', 'QuestionsController');
 Route::resource('topics', 'TopicsController');
+Route::resource('users', 'UsersController');
 
 Route::get('train', 'QuizController@train');
 Route::get('train/{topicName}/{questionNumber}', 'QuizController@show');

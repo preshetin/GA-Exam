@@ -96,7 +96,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
         $admins = [
             env('ADMIN_EMAIL', ''),
-            env('ADMIN_EMAIL_2', '')
+            env('ADMIN_EMAIL_2', ''),
+            env('ADMIN_EMAIL_3', '')
         ];
 
         if (in_array($this->email, $admins))

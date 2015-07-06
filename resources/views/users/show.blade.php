@@ -27,6 +27,7 @@
                         @endif
                     </div>
                 </div>
+                <?php echo '<pre>' . var_export($user, true) . '</pre>'; ?>
             </div>
         </div>
     </div>

@@ -44,24 +44,50 @@ class QuizController extends Controller {
         ]);
     }
 
-    public function reply() {
+    public function proposeSolution() {
 
-        $questionId     = Request::get('questionId');
-        $chosenAnswerId = Request::get('chosenAnswerId');
+        $questionId = Request::get('questionId');
+        $question = Question::find($questionId);
+        $answers = $question->answers()->get()->toArray();
 
-        $replyResult = Answer::findOrFail($chosenAnswerId)->is_correct;
+        // Prepare array of proposed answers
+        $proposedSolution = [];
+        if ($question->question_type == 'one_variant')
+        {
+            $proposedSolution[] = (int)Request::get('chosenAnswer');
+        }
+        else
+        {
+            $proposedSolution = Request::get('chosenAnswers');
+        }
 
-        \Auth::user()->replies()->updateOrCreate(['question_id' => $questionId], ['is_correct' => $replyResult]);
+        // Prepare array of correct answers
+        $correctSolution = [];
+        foreach($answers as $answer) {
+            if ($answer['is_correct']) {
+                $correctSolution[] = $answer['id'];
+            }
+        }
 
-        $answers = Question::find($questionId)->answers();
+        $proposedSolutionResult = ($proposedSolution == $correctSolution);
 
-        $correctAnswerId = $answers->where('is_correct','=', true)->first()->id;
+        // pass to response detailed results on proposed solution
+        $proposedSolutionWithDetailedResult = [];
+        foreach ($proposedSolution as $answerId) {
+            foreach ($answers as $answer) {
+                if ($answer['id'] == $answerId) {
+                    $is_correct = $answer['is_correct'];
+                }
+            }
+            $proposedSolutionWithDetailedResult[$answerId] = $is_correct;
+        }
+
+        \Auth::user()->replies()->updateOrCreate(['question_id' => $questionId], ['is_correct' => $proposedSolutionResult]);
 
         return response()->json([
-            'correctAnswerId' => $correctAnswerId,
-            'chosenAnswerId' => $chosenAnswerId,
-            'replyResult'=> $replyResult,
-            'answers'    => $answers->get()
+            'correctSolution' => $correctSolution,
+            'proposedSolutionWithDetailedResult' => $proposedSolutionWithDetailedResult,
+            'proposedSolutionResult'=> $proposedSolutionResult
         ]);
     }
 }

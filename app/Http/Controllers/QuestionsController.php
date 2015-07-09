@@ -33,7 +33,9 @@ class QuestionsController extends Controller {
 	 */
 	public function create()
 	{
-        return view('questions.create');
+        $question_types = Question::possibleTypes();
+
+        return view('questions.create', compact('question_types'));
 	}
 
 	/**

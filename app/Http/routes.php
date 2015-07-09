@@ -39,4 +39,4 @@ Route::resource('users', 'UsersController');
 
 Route::get('train', 'QuizController@train');
 Route::get('train/{topicName}/{questionNumber}', 'QuizController@show');
-Route::post('train/{topicName}/{questionNumber}', 'QuizController@reply');
+Route::post('train/{topicName}/{questionNumber}', 'QuizController@proposeSolution');

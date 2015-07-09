@@ -19,17 +19,28 @@
                 <div class="panel-body">
                     <p class="lead">{{ $question->description }}</p>
 
-                    {!! Form::open(['class'=>'ajax']) !!}
+                    {!! Form::open(['class'=>'question ajax challenge ' . $question->question_type]) !!}
                     {!! Form::hidden('questionId', $question->id) !!}
 
-                    @foreach($answers as $answer)
-                        <div class="radio">
-                            <label>
-                                {!! Form::radio('chosenAnswerId', $answer->id, null, ['id' => $answer->id, 'class' => 'required']) !!}
-                                {{ $answer->description }}
-                            </label>
-                        </div>
-                    @endforeach
+                    @if($question->question_type == 'one_variant')
+                        @foreach($answers as $answer)
+                            <div class="radio">
+                                <label>
+                                    {!! Form::radio('chosenAnswer', $answer->id, null, ['id' => $answer->id, 'class' => 'required']) !!}
+                                    {{ $answer->description }}
+                                </label>
+                            </div>
+                        @endforeach
+                    @else
+                        @foreach($answers as $key => $answer)
+                            <div class="checkbox">
+                                <label>
+                                    {!! Form::checkbox('chosenAnswers[]', $answer->id, null, ['id' => $answer->id, 'class' => 'required']) !!}
+                                    {{ $answer->description }}
+                                </label>
+                            </div>
+                        @endforeach
+                    @endif
 
                     {!! Form::submit('Ответить', ['class'=>'btn btn-default']) !!}
                     <a class="next-question-button btn {{ $next['class'] }}" href="{{ $next['url'] }}" style="display: none;" role="button">{{ $next['text'] }}</a>

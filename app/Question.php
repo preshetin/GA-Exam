@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model {
 
-	protected $fillable = ['description', 'topic_id'];
+	protected $fillable = ['description', 'topic_id', 'question_type'];
 
     public function answers() {
         return $this->hasMany('App\Answer');
@@ -33,6 +33,22 @@ class Question extends Model {
         }
 
         return $nextQuestionLink;
+    }
+
+    /**
+     * Returns an array of all possible question types.
+     *
+     * @return array
+     */
+    public static function possibleTypes()
+    {
+        $type = \DB::select(\DB::raw('SHOW COLUMNS FROM questions WHERE Field = "question_type"'))[0]->Type;
+        preg_match('/^enum\((.*)\)$/', $type, $matches);
+        $values = [];
+        foreach(explode(',', $matches[1]) as $value){
+            $values[] = trim($value, "'");
+        }
+        return $values;
     }
 
 }

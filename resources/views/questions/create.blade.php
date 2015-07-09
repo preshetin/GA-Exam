@@ -11,8 +11,20 @@
                 {!! Form::open(['url' => action("QuestionsController@store")]) !!}
 
                 <div class="form-group">
-                {!! Form::label('description', 'Description') !!}
-                {!! Form::textarea('description', null, ['class'=>'form-control', 'placeholder'=>'Enter question description', 'rows' => 4]) !!}
+                    {!! Form::label('questionType', 'Question Type') !!}
+                    @foreach($question_types as $question_type)
+                        <div class="radio">
+                            <label>
+                                {!! Form::radio('question_type', $question_type, null, ['id' => $question_type]) !!}
+                                {{ $question_type }}
+                            </label>
+                        </div>
+                    @endforeach
+                </div>
+
+                <div class="form-group">
+                    {!! Form::label('description', 'Description') !!}
+                    {!! Form::textarea('description', null, ['class'=>'form-control', 'placeholder'=>'Enter question description', 'rows' => 4]) !!}
                 </div>
 
                 <div class="form-group">

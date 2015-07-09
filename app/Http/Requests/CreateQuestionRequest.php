@@ -22,7 +22,8 @@ class CreateQuestionRequest extends Request {
 	public function rules()
 	{
 		return [
-			'description' =>'required|min:3',
+            'question_type' => 'required',
+            'description' =>'required|min:3',
             'answer_description_1' =>'required',
             'answer_description_2' =>'required',
             'topic_id'    => 'required'

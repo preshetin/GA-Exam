@@ -17,6 +17,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <a href="{{ action('QuestionsController@show', $question->id) }}" class="btn btn-default"> Show</a>
+                            <small>id: {{ $question->id }}, created {{ $question->created_at->diffForHumans() }} </small>
                             {{--<a href="{{ action('QuestionsController@edit', $question->id) }}" class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</a>--}}
                         </div>
                         <div class="panel-body">

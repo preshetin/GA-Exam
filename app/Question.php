@@ -14,8 +14,9 @@ class Question extends Model {
         return $this->belongsTo('App\Topic');
     }
 
-    public static function getByTopicAndQuestionNumber(Topic $topic, $questionNumber) {
-        return Question::where('topic_id', '=', $topic->id)->get()[$questionNumber - 1];
+    public static function getByTopicAndQuestionNumber(Topic $topic, $questionNumber)
+    {
+        return Question::where('topic_id', '=', $topic->id)->orderBy('created_at', 'DESC')->get()[$questionNumber - 1];
     }
 
     public function nextQuestionLink(Topic $topic, $questionNumber) {

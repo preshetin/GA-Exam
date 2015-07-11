@@ -23,7 +23,7 @@
                             @if ($question->topic)
                                 <div class="pull-right"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> {{ $question->topic->title }}</div>
                             @endif
-                            <p class="lead">{{ $question->description }}</p>
+                            <p class="lead">{!! $question->renderDescription() !!}</p>
                             <ul>
                                 @foreach($question->answers as $answer)
                                     <div class="radio">

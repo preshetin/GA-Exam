@@ -52,4 +52,22 @@ class Question extends Model {
         return $values;
     }
 
+    public function renderDescription() {
+
+        $type = $this->question_type;
+        $description = $this->description;
+
+        switch($type) {
+            case "one_variant":
+                return $description;
+                break;
+            case "two_variants":
+                return $description . ' <b><i>(Выберите два варианта ответа)</i></b>';
+                break;
+            case "all_that_apply":
+                return $description . ' <b><i>(Выберите все подходящие варианты)</i></b>';
+                break;
+        }
+    }
+
 }

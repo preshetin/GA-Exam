@@ -17,7 +17,7 @@
                     Вопрос #{{ $questionNumber }} <div class="pull-right">{{ $questionNumber }} из {{ count($topic->questions) }}</div>
                 </div>
                 <div class="panel-body">
-                    <p class="lead">{{ $question->description }}</p>
+                    <p class="lead">{!! $question->renderDescription() !!}</p>
 
                     {!! Form::open(['class'=>'question ajax challenge ' . $question->question_type]) !!}
                     {!! Form::hidden('questionId', $question->id) !!}

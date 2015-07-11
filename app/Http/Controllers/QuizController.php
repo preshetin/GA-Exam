@@ -19,7 +19,7 @@ class QuizController extends Controller {
 
     public function train() {
 
-        $topics = Topic::has('questions')->orderBy('title')->get();
+        $topics = Topic::has('questions')->orderBy('name')->get();
 
         return view('quiz.train', compact('topics'));
     }

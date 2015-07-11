@@ -34,7 +34,7 @@ class HomeController extends Controller {
 	public function index()
 	{
 
-        $topics = Topic::has('questions')->orderBy('title')->get();
+        $topics = Topic::has('questions')->orderBy('name')->get();
 
         $user = \Auth::user();
 

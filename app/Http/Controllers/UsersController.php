@@ -8,11 +8,6 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller {
 
-    public function __construct()
-    {
-        $this->middleware('manager');
-    }
-
 	/**
 	 * Display a listing of the resource.
 	 *

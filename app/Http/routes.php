@@ -33,7 +33,7 @@ Route::get('oauth/{provider}', 'AuthController@login')->where([
 ]);
 /* Authentication routes end */
 
-Route::group(['prefix' => 'admin'], function()
+Route::group(['prefix' => 'admin', 'middleware' => 'manager'], function()
 {
     Route::resource('questions', 'QuestionsController');
     Route::resource('topics', 'TopicsController');

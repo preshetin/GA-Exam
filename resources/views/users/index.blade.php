@@ -30,7 +30,7 @@
                                     <th scope="row">{{ $user->id }}</th>
 
                                     <td>
-                                        <img src="{{ $user->avatar }}" style="height:20px" /> <a href="/users/{{ $user->id }}">{{ $user->name }}</a>
+                                        <img src="{{ $user->avatar }}" style="height:20px" /> <a href="/admin/users/{{ $user->id }}">{{ $user->name }}</a>
                                     </td>
                                     <td>
                                         {{ count($user->replies) }}

@@ -74,7 +74,7 @@ class QuestionsController extends Controller {
 
         \Session::flash('success', 'The question is successfully created.');
 
-        return redirect('questions');
+        return redirect('admin/questions');
 	}
 
 	/**
@@ -124,7 +124,7 @@ class QuestionsController extends Controller {
 
         \Session::flash('success', 'Question is successfully deleted.');
 
-        return redirect('questions');
+        return redirect('admin/questions');
 	}
 
 }

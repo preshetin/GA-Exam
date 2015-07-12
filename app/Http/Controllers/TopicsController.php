@@ -52,7 +52,7 @@ class TopicsController extends Controller {
 
         \Session::flash('success', $topic->name . ' topic is successfully created.');
 
-        return redirect('topics');
+        return redirect('admin/topics');
 	}
 
 	/**
@@ -100,7 +100,7 @@ class TopicsController extends Controller {
 
         \Session::flash('success', $topic->name . ' topic is successfully updated.');
 
-        return redirect('topics');
+        return redirect('admin/topics');
 	}
 
 	/**
@@ -115,7 +115,7 @@ class TopicsController extends Controller {
 
         \Session::flash('success', 'Topic is deleted.');
 
-        return redirect('topics');
+        return redirect('admin/topics');
 	}
 
 }

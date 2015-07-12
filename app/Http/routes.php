@@ -33,9 +33,13 @@ Route::get('oauth/{provider}', 'AuthController@login')->where([
 ]);
 /* Authentication routes end */
 
-Route::resource('questions', 'QuestionsController');
-Route::resource('topics', 'TopicsController');
-Route::resource('users', 'UsersController');
+Route::group(['prefix' => 'admin'], function()
+{
+    Route::resource('questions', 'QuestionsController');
+    Route::resource('topics', 'TopicsController');
+    Route::resource('users', 'UsersController');
+});
+
 
 Route::get('train', 'QuizController@train');
 Route::get('train/{topicName}/{questionNumber}', 'QuizController@show');

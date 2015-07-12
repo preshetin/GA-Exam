@@ -51,13 +51,21 @@
                     <label class="radio-inline">{!! Form::radio('answer_is_correct_4', true, null) !!} correct</label>
                     <label class="radio-inline">{!! Form::radio('answer_is_correct_4', false, null) !!} incorrect</label>
                 </div>
+                <div class="form-group">
+                    {!! Form::label('answer_description_5', 'Answer Description 5') !!}
+                    {!! Form::textarea('answer_description_5', null, ['class'=>'form-control', 'placeholder'=>'Enter answer variant', 'rows' => 2]) !!}
+                    <label class="radio-inline">{!! Form::radio('answer_is_correct_5', true, null) !!} correct</label>
+                    <label class="radio-inline">{!! Form::radio('answer_is_correct_5', false, null) !!} incorrect</label>
+                </div>
 
                 <div class="form-group">
                     @foreach(App\Topic::all() as $topic)
-                        <label class="radio-inline">
-                            {!! Form::radio('topic_id', $topic->id, null, ['id'=>$topic->id]) !!}
-                            {{ $topic->title }}
-                        </label>
+                        <div class="radio">
+                            <label>
+                                {!! Form::radio('topic_id', $topic->id, null, ['id'=>$topic->id]) !!}
+                                {{ $topic->title }}
+                            </label>
+                        </div>
                      @endforeach
                 </div>
 

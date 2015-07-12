@@ -48,7 +48,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     public function anyName()
     {
-        return current(array_filter([$this->name, $this->nickname, $this->email]));
+        $fullNameArray = explode(' ', $this->name);
+        $firstName = $fullNameArray[0];
+
+        return current(array_filter([$firstName, $this->name, $this->nickname, $this->email]));
     }
 
     public function repliesByTopic(Topic $topic)

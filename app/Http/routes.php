@@ -38,6 +38,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'manager'], function()
     Route::resource('questions', 'QuestionsController');
     Route::resource('topics', 'TopicsController');
     Route::resource('users', 'UsersController');
+    Route::get('email-list', 'EmailListController@index');
 });
 
 

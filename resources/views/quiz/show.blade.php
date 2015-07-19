@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <h1>Тренировка: {{ $topic->title }}</h1>
+            <h1>{{ $baseTopic->title }}: {{ $topic->title }}</h1>
 
             <div class="progress">
                 <div class="progress-bar progress-bar-striped" style="width: {{ ( $questionNumber * 100 ) / count($topic->questions) }}%">

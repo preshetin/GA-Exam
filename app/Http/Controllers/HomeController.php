@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\BaseTopic;
 use App\Topic;
 
 
@@ -34,12 +35,12 @@ class HomeController extends Controller {
 	public function index()
 	{
 
-        $topics = Topic::has('questions')->orderBy('name')->get();
+        $baseTopics = BaseTopic::where('is_published', '=', true)->get();
 
         $user = \Auth::user();
 
 		return view('home')->with([
-            'topics' => $topics,
+            'baseTopics' => $baseTopics,
             'user' => $user
         ]);
 

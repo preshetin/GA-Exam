@@ -37,11 +37,17 @@ Route::group(['prefix' => 'admin', 'middleware' => 'manager'], function()
 {
     Route::resource('questions', 'QuestionsController');
     Route::resource('topics', 'TopicsController');
+    Route::resource('base-topics', 'BaseTopicsController');
     Route::resource('users', 'UsersController');
     Route::get('email-list', 'EmailListController@index');
 });
 
+// Temporary, waiting for YD questions
+//Route::get('train', function() {
+//    return redirect('train/google-analytics');
+//});
+Route::get('train', 'QuizController@index');
 
-Route::get('train', 'QuizController@train');
-Route::get('train/{topicName}/{questionNumber}', 'QuizController@show');
-Route::post('train/{topicName}/{questionNumber}', 'QuizController@proposeSolution');
+Route::get('train/{baseTopicName}', 'QuizController@train');
+Route::get('train/{baseTopicName}/{topicName}/{questionNumber}', 'QuizController@show');
+Route::post('train/{baseTopicName}/{topicName}/{questionNumber}', 'QuizController@proposeSolution');

@@ -1,4 +1,15 @@
 <div class="form-group">
+    @foreach(App\BaseTopic::all() as $baseTopic)
+        <div class="radio">
+            <label>
+                {!! Form::radio('base_topic_id', $baseTopic->id, null, ['id'=>$baseTopic->id]) !!}
+                {{ $baseTopic->title }}
+            </label>
+        </div>
+    @endforeach
+</div>
+
+<div class="form-group">
     {!! Form::label('name', 'Name') !!}
     {!! Form::text('name', null, ['class'=>'form-control', 'placeholder'=>'Enter topic name (lowercase, used in URL)']) !!}
 </div>

@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 
+use App\BaseTopic;
 use App\Topic;
 use App\Question;
 use App\Answer;
@@ -17,14 +18,26 @@ class QuizController extends Controller {
         $this->middleware('auth', ['except' => 'train']);
     }
 
-    public function train() {
+    public function index()
+    {
+        $baseTopics = BaseTopic::where('is_published', '=', true)->get();
 
-        $topics = Topic::has('questions')->orderBy('name')->get();
+        return view('quiz.index', compact('baseTopics'));
 
-        return view('quiz.train', compact('topics'));
     }
 
-    public function show($topicName, $questionNumber) {
+    public function train($baseTopicName) {
+
+        $baseTopic = BaseTopic::where('name', '=', $baseTopicName)->first();
+
+        $topics = $baseTopic->topics()->orderBy('name')->get();
+
+        return view('quiz.train', compact('baseTopic', 'topics'));
+    }
+
+    public function show($baseTopicName, $topicName, $questionNumber) {
+
+        $baseTopic = BaseTopic::where('name', '=', $baseTopicName)->first();
 
         $topic = Topic::where('name', '=', $topicName)->first();
 
@@ -33,14 +46,15 @@ class QuizController extends Controller {
 
         $answers = $question->answers()->get();
 
-        $nextQuestionLink = $question->nextQuestionLink($topic, $questionNumber);
+        $nextQuestionLink = $question->nextQuestionLink($baseTopicName, $topic, $questionNumber);
 
         return view('quiz.show')->with([
-            'questionNumber'   => $questionNumber,
-            'topic'            => $topic,
-            'question'         => $question,
-            'answers'          => $answers,
-            'next' => $nextQuestionLink
+            'questionNumber' => $questionNumber,
+            'topic'          => $topic,
+            'question'       => $question,
+            'answers'        => $answers,
+            'next'           => $nextQuestionLink,
+            'baseTopic'      => $baseTopic
         ]);
     }
 

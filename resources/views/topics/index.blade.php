@@ -17,6 +17,9 @@
                         <div>
                             <tr>
                                 <td>
+                                    @if($topic->baseTopic)
+                                        <div class="pull-right"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> {{ $topic->baseTopic->title }}</div>
+                                    @endif
                                     <h3 class="list-group-item-heading">{{ $topic->title }}</h3>
                                     <p class="list-group-item-text">{{ $topic->description }}</p>
                                 </td>

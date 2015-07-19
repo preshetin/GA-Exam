@@ -19,12 +19,12 @@ class Question extends Model {
         return Question::where('topic_id', '=', $topic->id)->orderBy('created_at', 'DESC')->get()[$questionNumber - 1];
     }
 
-    public function nextQuestionLink(Topic $topic, $questionNumber) {
+    public function nextQuestionLink($baseTopicName, Topic $topic, $questionNumber) {
 
         $nextQuestionLink = [];
 
         if (count($topic->questions) != $questionNumber) {
-            $nextQuestionLink['url']   = '/train/' . $topic->name . '/' . ++$questionNumber;
+            $nextQuestionLink['url']   = '/train/'. $baseTopicName . '/' . $topic->name . '/' . ++$questionNumber;
             $nextQuestionLink['text']  = 'Следующий вопрос';
             $nextQuestionLink['class'] = 'btn-default';
         } else {

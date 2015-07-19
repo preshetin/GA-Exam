@@ -11,6 +11,28 @@
                 {!! Form::open(['url' => action("QuestionsController@store")]) !!}
 
                 <div class="form-group">
+                    @foreach(App\BaseTopic::all() as $baseTopic)
+                        <div class="radio">
+                            <label>
+                                {!! Form::radio('base_topic_id', $baseTopic->id, null, ['id'=>$baseTopic->id]) !!}
+                                {{ $baseTopic->title }}
+                            </label>
+                        </div>
+                    @endforeach
+                </div>
+
+                <div class="form-group topics">
+                    @foreach(App\Topic::all() as $topic)
+                        <div class="radio">
+                            <label>
+                                {!! Form::radio('topic_id', $topic->id, null, ['id'=>$topic->id, 'base_topic' => $topic->baseTopic->id]) !!}
+                                {{ $topic->title }}
+                            </label>
+                        </div>
+                    @endforeach
+                </div>
+
+                <div class="form-group">
                     {!! Form::label('questionType', 'Question Type') !!}
                     @foreach($question_types as $question_type)
                         <div class="radio">
@@ -58,16 +80,6 @@
                     <label class="radio-inline">{!! Form::radio('answer_is_correct_5', false, null) !!} incorrect</label>
                 </div>
 
-                <div class="form-group">
-                    @foreach(App\Topic::all() as $topic)
-                        <div class="radio">
-                            <label>
-                                {!! Form::radio('topic_id', $topic->id, null, ['id'=>$topic->id]) !!}
-                                {{ $topic->title }}
-                            </label>
-                        </div>
-                     @endforeach
-                </div>
 
                 {!! Form::submit('Create Question', ['class'=>'btn btn-primary btn-block']) !!}
 

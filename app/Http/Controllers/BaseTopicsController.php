@@ -1,12 +1,12 @@
 <?php namespace App\Http\Controllers;
 
-use App\Topic;
+use App\BaseTopic;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class TopicsController extends Controller {
+class BaseTopicsController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -15,9 +15,9 @@ class TopicsController extends Controller {
 	 */
 	public function index()
 	{
-		$topics = Topic::all()->sortByDesc('updated_at');
+		$baseTopics = BaseTopic::all()->sortByDesc('updated_at');
 
-        return view('topics.index', compact('topics'));
+        return view('base-topics.index', compact('baseTopics'));
 	}
 
 	/**
@@ -27,7 +27,7 @@ class TopicsController extends Controller {
 	 */
 	public function create()
 	{
-		return view('topics.create');
+		return view('base-topics.create');
 	}
 
 	/**
@@ -38,16 +38,16 @@ class TopicsController extends Controller {
 	public function store(Request $request)
 	{
         $this->validate($request, [
-            'name' => 'required|unique:topics',
-            'title' => 'required|unique:topics',
-            'base_topic_id' => 'required'
+            'name' => 'required|unique:base_topics',
+            'title' => 'required|unique:base_topics'
         ]);
 
-        $topic = Topic::create($request->all());
+        $baseTopic = BaseTopic::create($request->all());
 
-        \Session::flash('success', $topic->name . ' topic is successfully created.');
+        \Session::flash('success', $baseTopic->name . ' topic is successfully created.');
 
-        return redirect('admin/topics');
+        return redirect('admin/base-topics');
+
 	}
 
 	/**
@@ -69,10 +69,9 @@ class TopicsController extends Controller {
 	 */
 	public function edit($id)
 	{
+		$baseTopic = BaseTopic::find($id);
 
-        $topic = Topic::findOrFail($id);
-
-		return view('topics.edit', compact('topic'));
+        return view('base-topics.edit', compact('baseTopic'));
 	}
 
 	/**
@@ -85,17 +84,17 @@ class TopicsController extends Controller {
 	{
         $this->validate($request, [
             'name' => 'required',
-            'title' => 'required',
-            'base_topic_id' => 'required'
+            'title' => 'required'
         ]);
 
-        $topic = Topic::findOrFail($id);
+        $baseTopic = BaseTopic::find($id);
 
-        $topic->update($request->all());
+        $baseTopic->update($request->all());
 
-        \Session::flash('success', $topic->name . ' topic is successfully updated.');
+        \Session::flash('success', $baseTopic->name . ' topic is successfully updated.');
 
-        return redirect('admin/topics');
+        return redirect('admin/base-topics');
+
 	}
 
 	/**
@@ -106,11 +105,11 @@ class TopicsController extends Controller {
 	 */
 	public function destroy($id)
 	{
-        Topic::destroy($id);
+		BaseTopic::destroy($id);
 
-        \Session::flash('success', 'Topic is deleted.');
+        \Session::flash('success', 'Topic is successfully deleted.');
 
-        return redirect('admin/topics');
+        return redirect('admin/base-topics');
 	}
 
 }

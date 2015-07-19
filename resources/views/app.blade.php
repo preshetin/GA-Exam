@@ -55,6 +55,7 @@
                             {{--<ul class="dropdown-menu" role="menu">--}}
                                 <li><a href="{{ url('admin/questions') }}"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Questions</a></li>
                                 <li><a href="{{ url('admin/topics') }}"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> Topics</a></li>
+                                <li><a href="{{ url('admin/base-topics') }}"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> Base Topics</a></li>
                                 <li><a href="{{ url('admin/users') }}"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Users</a></li>
                                 <li><a href="{{ url('admin/email-list') }}"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Email list</a></li>
                             {{--</ul>--}}

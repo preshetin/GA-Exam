@@ -43,10 +43,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'manager'], function()
 });
 
 // Temporary, waiting for YD questions
-//Route::get('train', function() {
-//    return redirect('train/google-analytics');
-//});
-Route::get('train', 'QuizController@index');
+Route::get('train', function() {
+    return redirect('train/google-analytics');
+});
+//Route::get('train', 'QuizController@index');
 
 Route::get('train/{baseTopicName}', 'QuizController@train');
 Route::get('train/{baseTopicName}/{topicName}/{questionNumber}', 'QuizController@show');

@@ -25,7 +25,7 @@
                     @else
                         <div style="text-align: center; color: grey;">
                             <h3>У вас нет ответов на вопросы</h3>
-                            <p class="lead" >Попробуйте пройти, например, тест по <a href="/train/campaigns/1">Рекламным кампаниям</a>.</p>
+                            <p class="lead" >Попробуйте пройти, например, тест по <a href="/train/google-analytics/campaigns/1">Рекламным кампаниям</a>.</p>
                         </div>
                     @endif
 

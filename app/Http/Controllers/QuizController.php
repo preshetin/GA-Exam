@@ -13,11 +13,6 @@ use Request;
 
 class QuizController extends Controller {
 
-    public function __construct()
-    {
-        $this->middleware('auth', ['except' => 'train']);
-    }
-
     public function index()
     {
         $baseTopics = BaseTopic::where('is_published', '=', true)->get();
@@ -96,7 +91,9 @@ class QuizController extends Controller {
             $proposedSolutionWithDetailedResult[$answerId] = $is_correct;
         }
 
-        \Auth::user()->replies()->updateOrCreate(['question_id' => $questionId], ['is_correct' => $proposedSolutionResult]);
+        if (\Auth::user()) {
+            \Auth::user()->replies()->updateOrCreate(['question_id' => $questionId], ['is_correct' => $proposedSolutionResult]);
+        }
 
         return response()->json([
             'correctSolution' => $correctSolution,

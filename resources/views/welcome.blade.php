@@ -112,6 +112,9 @@
             </ul>
         </div>
 
+        <a href="/train/google-analytics" class="btn btn-default btn-block btn-lg">Начать тренировку</a>
+        <p>или</p>
+
         <a href="oauth/facebook" class="btn btn-block btn-social btn-lg btn-facebook"><i class="fa fa-facebook"></i>Войти через Facebook</a>
         <a href="oauth/google" class="btn btn-block btn-social btn-lg btn-google"><i class="fa fa-google"></i>Войти через Google</a>
 

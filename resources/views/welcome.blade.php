@@ -15,14 +15,9 @@
 
     <!-- jQuery library (served from Google) -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <!-- bxSlider Javascript file -->
-    <script src="/js/jquery.bxslider.min.js"></script>
-    <!-- bxSlider CSS file -->
-    <link href="/css/jquery.bxslider.css" rel="stylesheet" />
 
     <link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/bootstrap-social.css') }}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,9 +31,7 @@
         body {
             margin: 0;
             padding: 0;
-            color: #B0BEC5;
             font-weight: 100;
-            text-align: center;
 
         }
 
@@ -59,12 +52,14 @@
 
         .title {
             font-size: 26px;
+            text-align: center;
         }
 
         .quote {
             font-size: 20px;
             margin-bottom: 10px;
             margin-top: 15px;
+            text-align: center;
         }
     </style>
 
@@ -104,19 +99,15 @@
         <div class="title"><i class="fa fa-graduation-cap" style="font-size:140%;"></i><br />Google Analytics Test</div>
         <p class="quote">Проверьте свои знания по GA, пройдя тестирование по разным темам</p>
 
-        <div class="slider">
-            <ul class="bxslider">
-                <li><img class="slider_image" src="/images/slider_image_1.png" /></li>
-                <li><img class="slider_image" src="/images/slider_image_2.png" /></li>
-                <li><img class="slider_image" src="/images/slider_image_3.png" /></li>
-            </ul>
+        <div class="list-group">
+            @foreach($topics as $topic)
+                <a href="{{ url('train/'. $baseTopic->name . '/' . $topic->name . '/1') }}" class="list-group-item">
+                    <span class="badge">{{ count($topic->questions) }}</span>
+                    <h3 class="list-group-item-heading">{{ $topic->title }}</h3>
+                    <p class="list-group-item-text">{{ $topic->description }}</p>
+                </a>
+            @endforeach
         </div>
-
-        <a href="/train/google-analytics" class="btn btn-default btn-block btn-lg">Начать тренировку</a>
-        <p>или</p>
-
-        <a href="oauth/facebook" class="btn btn-block btn-social btn-lg btn-facebook"><i class="fa fa-facebook"></i>Войти через Facebook</a>
-        <a href="oauth/google" class="btn btn-block btn-social btn-lg btn-google"><i class="fa fa-google"></i>Войти через Google</a>
 
         <div class="mastfoot">
             <div class="inner">
@@ -127,13 +118,6 @@
             </div>
         </div>
     </div>
-    <script>
-        $(document).ready(function(){
-            $('.bxslider').bxSlider({
-                auto: true,
-            });
-        });
-    </script>
 
 
 </body>

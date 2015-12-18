@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use App\BaseTopic;
+
 class WelcomeController extends Controller {
 
 	/*
@@ -30,7 +32,13 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('welcome');
-	}
+        $baseTopicName = "google-analytics";
+
+        $baseTopic = BaseTopic::where('name', '=', $baseTopicName)->first();
+
+        $topics = $baseTopic->topics()->orderBy('name')->get();
+
+        return view('welcome', compact('baseTopic', 'topics'));
+    }
 
 }

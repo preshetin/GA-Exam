@@ -66,12 +66,12 @@
 
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
-						<li><a href="{{ url('/login') }}">Login</a></li>
+						<li><a href="{{ url('/login') }}"><i class="fa fa-sign-in"></i> Войти</a></li>
 					@else
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ Auth::user()->avatar }}" style="width:22px; border: 1px solid #dddddd;"> {{ Auth::user()->anyName() }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="{{ url('/logout') }}">Logout</a></li>
+								<li><a href="{{ url('/logout') }}"><i class="fa fa-sign-out"></i> Выйти</a></li>
 							</ul>
 						</li>
 					@endif

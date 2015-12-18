@@ -64,10 +64,19 @@
                     @endif
                 </ul>
 
-				<ul class="nav navbar-nav navbar-right">
+				<ul class="nav navbar-nav navbar-right nav-pills">
 					@if (Auth::guest())
-						<li><a href="{{ url('/login') }}"><i class="fa fa-sign-in"></i> Войти</a></li>
-					@else
+                        <li>
+                            <div class="btn-nav">
+                                <a href="/oauth/facebook" class="btn btn-social btn-block btn-sm btn-facebook navbar-btn"><i class="fa fa-facebook"></i>Войти c Facebook</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="btn-nav">
+                                <a href="/oauth/google" class="btn btn-social btn-block btn-sm btn-google navbar-btn"><i class="fa fa-google"></i>Войти c Google</a>
+                            </div>
+                        </li>
+                    @else
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ Auth::user()->avatar }}" style="width:22px; border: 1px solid #dddddd;"> {{ Auth::user()->anyName() }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">

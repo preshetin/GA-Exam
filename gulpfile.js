@@ -16,7 +16,6 @@ elixir(function(mix) {
 
     mix.styles([
         "app.css",
-        "bootstrap-social.css",
         "font-awesome.min.css"
     ], 'public/css/main.css', 'public/css');
 });

@@ -88,7 +88,6 @@
 <!-- Facebook Like button end -->
 
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 
     <div class="container">
         <div class="title"><i class="fa fa-graduation-cap" style="font-size:140%;"></i><br />Google Analytics Test</div>

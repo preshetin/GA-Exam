@@ -13,9 +13,6 @@
     <meta property="fb:app_id" content="389709951229208" />
     <meta property="og:description" content="GA Test помогает подготовиться к официальному экзамену по Google Analytics (GAIQ). Проверьте свои знания по GA, пройдя тестирование по разным темам." />
 
-    <!-- jQuery library (served from Google) -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-
     <link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 

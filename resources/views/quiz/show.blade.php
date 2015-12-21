@@ -4,7 +4,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <h1>{{ $baseTopic->title }}: {{ $topic->title }}</h1>
+            <ol class="breadcrumb">
+                <li><a href="/train/{{ $baseTopic->name }}">{{ $baseTopic->title }}</a></li>
+                <li class="active">{{ $topic->title }}</li>
+            </ol>
 
             <div class="progress">
                 <div class="progress-bar progress-bar-striped" style="width: {{ ( $questionNumber * 100 ) / count($topic->questions) }}%">

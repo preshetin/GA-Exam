@@ -107,7 +107,7 @@
             <div class="inner">
                 <p><a href="{{ url('about-gaiq-exam') }}"><i class="fa fa-certificate"></i> Об экзамене GAIQ</a> <a href="{{ url('about') }}"><i class="fa fa-rocket"></i> О проекте</a> <a href="{{ url('contact') }}"><i class="fa fa-envelope-o"></i>  Контакты</a></p>
 
-                <div class="fb-like" data-href="http://www.gatest.ru/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+                <div class="fb-like" data-href="http://www.gatest.ru/" data-width="270" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 
             </div>
         </div>

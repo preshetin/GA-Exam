@@ -3,6 +3,7 @@
 use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Yajra\Datatables\Datatables;
 
 use Illuminate\Http\Request;
 
@@ -50,6 +51,19 @@ class UsersController extends Controller {
 	public function destroy($id)
 	{
 		//
+	}
+
+
+	/**
+	 * Process datatables ajax request.
+	 *
+	 * @return \Illuminate\Http\JsonResponse
+	 */
+	public function anyData()
+	{
+		$users = User::select('*');
+
+		return Datatables::of($users)->make(true);
 	}
 
 }

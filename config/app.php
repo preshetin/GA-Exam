@@ -147,6 +147,7 @@ return [
 		'App\Providers\ConfigServiceProvider',
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
+        'Yajra\Datatables\DatatablesServiceProvider'
 
 	],
 
@@ -198,6 +199,7 @@ return [
         'Form'      => 'Illuminate\Html\FormFacade',
         'Html'      => 'Illuminate\Html\HtmlFacade',
         'Socialite' => 'Laravel\Socialite\Facades\Socialite',
+        'Datatables' => 'Yajra\Datatables\Datatables'
 
 	],
 

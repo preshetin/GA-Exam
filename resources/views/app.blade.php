@@ -7,8 +7,10 @@
 	<title>Google Analytics Test</title>
 
 	<link href="{{ asset('css/main.css') }}" rel="stylesheet">
+	<link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
 
-    <!-- Fonts -->
+
+	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -101,6 +103,11 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/jquery.validation/1.13.1/jquery.validate.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    <script src="/js/main.js"></script>
+
+	<!-- DataTables -->
+	<script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+
+	<script src="/js/main.js"></script>
+	@stack('scripts')
 </body>
 </html>

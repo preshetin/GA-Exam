@@ -63,7 +63,9 @@ class UsersController extends Controller {
 	{
 		$users = User::select('*');
 
-		return Datatables::of($users)->make(true);
+		return Datatables::of($users)
+	//			->editColumn($user)
+				->make(true);
 	}
 
 }

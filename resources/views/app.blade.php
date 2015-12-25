@@ -7,7 +7,7 @@
 	<title>Google Analytics Test</title>
 
 	<link href="{{ asset('css/main.css') }}" rel="stylesheet">
-	<link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="/css/dataTables.bootstrap.css">
 
 
 	<!-- Fonts -->
@@ -106,6 +106,8 @@
 
 	<!-- DataTables -->
 	<script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+	<script src="/js/dataTables.bootstrap.js"></script>
+
 
 	<script src="/js/main.js"></script>
 	@stack('scripts')

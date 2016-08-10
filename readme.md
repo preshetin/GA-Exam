@@ -12,10 +12,10 @@ A simple quiz application made on Laravel 5.
 ![Check answer result after reply](https://www.dropbox.com/s/ujrtzwliihx7192/slider_image_1.png?raw=1)
 
 ### 2. Answer questions by topics
-![Answer questions by topics](https://dl.dropboxusercontent.com/content_link/b4Yr8m6AZnGJwnpDx5nybIXtcmap7Egbf9hdl4t95hDiVMuWpD6EdxeMLFM0hVuV/file)
+![Answer questions by topics](https://www.dropbox.com/s/ux6qcylpwovz255/slider_image_2.png?raw=1)
 
 ### 3. Get replies stats
-![Get replies stats](https://dl.dropboxusercontent.com/content_link/JMk0jJ0xhqbs1acSRio380BnWKqT4N3rxpKdJCdC47Ujb4hhpjbke2Pe3nRYLrQI/file)
+![Get replies stats](https://www.dropbox.com/s/ux6qcylpwovz255/slider_image_3.png?raw=1)
 
 ## Database structure
 

@@ -15,7 +15,7 @@ A simple quiz application made on Laravel 5.
 ![Answer questions by topics](https://www.dropbox.com/s/ux6qcylpwovz255/slider_image_2.png?raw=1)
 
 ### 3. Get replies stats
-![Get replies stats](https://www.dropbox.com/s/ux6qcylpwovz255/slider_image_3.png?raw=1)
+![Get replies stats](https://www.dropbox.com/s/bgpngfxnh6i0ubv/slider_image_3.png?raw=1)
 
 ## Database structure
 
@@ -51,7 +51,7 @@ Database contains these tables:
 
 ## Demo
 
-Production site is located at  [www.gatest.ru](http://www.gatest.ru)
+Production site is located at  [quizr.frb.io/](https://quizr.frb.io/)
 
 ## Contact
 

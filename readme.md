@@ -9,13 +9,13 @@ A simple quiz application made on Laravel 5.
 ## Features
 
 ### 1. Check answer result after reply
-![Check answer result after reply](http://www.gatest.ru/images/slider_image_1.png)
+![Check answer result after reply](https://dl.dropboxusercontent.com/content_link/T1iPWan3N66ziWAOlVOsTsEgp3tg4zaVSFw0Hr1lOu6uFinpAXZWuzqhDx0K8CEW/file)
 
 ### 2. Answer questions by topics
-![Answer questions by topics](http://www.gatest.ru/images/slider_image_2.png)
+![Answer questions by topics](https://dl.dropboxusercontent.com/content_link/b4Yr8m6AZnGJwnpDx5nybIXtcmap7Egbf9hdl4t95hDiVMuWpD6EdxeMLFM0hVuV/file)
 
 ### 3. Get replies stats
-![Get replies stats](http://www.gatest.ru/images/slider_image_3.png)
+![Get replies stats](https://dl.dropboxusercontent.com/content_link/JMk0jJ0xhqbs1acSRio380BnWKqT4N3rxpKdJCdC47Ujb4hhpjbke2Pe3nRYLrQI/file)
 
 ## Database structure
 

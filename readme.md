@@ -9,7 +9,7 @@ A simple quiz application made on Laravel 5.
 ## Features
 
 ### 1. Check answer result after reply
-![Check answer result after reply](https://dl.dropboxusercontent.com/content_link/T1iPWan3N66ziWAOlVOsTsEgp3tg4zaVSFw0Hr1lOu6uFinpAXZWuzqhDx0K8CEW/file)
+![Check answer result after reply](https://www.dropbox.com/s/ujrtzwliihx7192/slider_image_1.png?raw=1)
 
 ### 2. Answer questions by topics
 ![Answer questions by topics](https://dl.dropboxusercontent.com/content_link/b4Yr8m6AZnGJwnpDx5nybIXtcmap7Egbf9hdl4t95hDiVMuWpD6EdxeMLFM0hVuV/file)
